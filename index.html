@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6d5dfc">
   <meta charset="UTF-8">
   <meta name="google-site-verification" 
   content="WgPR1cvTCyJCbK8T-wBXMrwiM_SQbF-NjsoAGwTWQj8" />
@@ -10,6 +12,11 @@
   <title>Learnix — Learn. Practice. Succeed.</title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
 <body>
   <header class="navbar">
     <a class="brand" href="#home"><span class="logo">L</span><span>Learnix</span></a>
