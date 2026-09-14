@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Learn Digital Logic Design with simple explanations of number systems, logic gates, Boolean algebra, K-maps, combinational circuits and sequential circuits.">
+
+  <meta name="keywords"
+        content="Digital Logic, Logic Gates, Boolean Algebra, K Map, Number Systems, Combinational Circuits, Sequential Circuits">
+
+  <title>Digital Logic Design: Complete Beginner's Guide | Learnix</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h2 {
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #312e81, #2563eb);
+      color: white;
+      padding: 65px 7%;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      font-size: 18px;
+    }
+
+    .container {
+      width: 86%;
+      max-width: 1200px;
+      margin: 35px auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 25px;
+    }
+
+    .sidebar {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 12px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #2563eb;
+      text-decoration: none;
+      padding: 6px 0;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .card h2 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    .card p {
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 18px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 15px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+    }
+
+    th,
+    td {
+      border: 1px solid #d1d5db;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #e5e7eb;
+    }
+
+    .note {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 15px;
+      margin: 15px 0;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 7%;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+
+      header {
+        text-align: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .container {
+        width: 94%;
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      table {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>Learnix</h2>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="java.html">Java</a>
+    <a href="dbms.html">DBMS</a>
+    <a href="data-structures.html">Data Structures</a>
+    <a href="digital-logic.html">Digital Logic</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Digital Logic Design</h1>
+
+  <p>
+    Learn Digital Logic from basics with simple explanations,
+    truth tables, logic gates, Boolean algebra, K-maps,
+    combinational circuits and sequential circuits.
+  </p>
+</section>
+
+<div class="container">
+
+  <aside class="sidebar">
+
+    <h3>Contents</h3>
+
+    <a href="#introduction">1. Introduction</a>
+    <a href="#number-systems">2. Number Systems</a>
+    <a href="#binary-conversion">3. Number Conversion</a>
+    <a href="#logic-gates">4. Logic Gates</a>
+    <a href="#boolean-algebra">5. Boolean Algebra</a>
+    <a href="#truth-tables">6. Truth Tables</a>
+    <a href="#kmap">7. K-Map</a>
+    <a href="#combinational">8. Combinational Circuits</a>
+    <a href="#sequential">9. Sequential Circuits</a>
+    <a href="#faq">10. FAQ</a>
+
+  </aside>
+
+  <main>
+
+    <!-- CONTENT WILL BE ADDED HERE -->
+    <!-- INTRODUCTION -->
+<section id="introduction" class="card">
+
+  <h2>1. Introduction to Digital Logic</h2>
+
+  <p>
+    Digital Logic is a branch of electronics and computer science
+    that deals with digital signals and binary values.
+    Digital systems mainly use two states:
+    <strong>0 and 1</strong>.
+  </p>
+
+  <p>
+    Digital logic is the foundation of computers, mobile phones,
+    calculators, digital watches, communication systems and
+    many other electronic devices.
+  </p>
+
+  <h3>Digital Signals</h3>
+
+  <pre><code>LOW  →  0
+HIGH →  1</code></pre>
+
+  <h3>Why Digital Logic is Important</h3>
+
+  <ul>
+    <li>Forms the foundation of computers.</li>
+    <li>Helps in designing processors and memory systems.</li>
+    <li>Used in digital communication.</li>
+    <li>Used in control and automation systems.</li>
+    <li>Important for understanding computer hardware.</li>
+  </ul>
+
+  <div class="note">
+    <strong>Remember:</strong>
+    Digital systems represent information mainly using binary
+    digits 0 and 1.
+  </div>
+
+</section>
+
+
+<!-- NUMBER SYSTEMS -->
+<section id="number-systems" class="card">
+
+  <h2>2. Number Systems</h2>
+
+  <p>
+    A number system is a method of representing numbers using
+    specific symbols and a base (radix).
+  </p>
+
+  <h3>Common Number Systems</h3>
+
+  <table>
+
+    <tr>
+      <th>Number System</th>
+      <th>Base</th>
+      <th>Symbols Used</th>
+    </tr>
+
+    <tr>
+      <td>Binary</td>
+      <td>2</td>
+      <td>0, 1</td>
+    </tr>
+
+    <tr>
+      <td>Octal</td>
+      <td>8</td>
+      <td>0 to 7</td>
+    </tr>
+
+    <tr>
+      <td>Decimal</td>
+      <td>10</td>
+      <td>0 to 9</td>
+    </tr>
+
+    <tr>
+      <td>Hexadecimal</td>
+      <td>16</td>
+      <td>0 to 9, A to F</td>
+    </tr>
+
+  </table>
+
+
+  <h3>1. Binary Number System</h3>
+
+  <p>
+    The binary number system has base 2 and uses only two digits:
+    <strong>0 and 1</strong>.
+  </p>
+
+  <pre><code>Binary digits:
+0, 1
+
+Example:
+1011₂</code></pre>
+
+
+  <h3>2. Decimal Number System</h3>
+
+  <p>
+    The decimal number system has base 10 and uses digits from
+    0 to 9. It is the number system we commonly use in daily life.
+  </p>
+
+  <pre><code>Decimal digits:
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+Example:
+125₁₀</code></pre>
+
+
+  <h3>3. Octal Number System</h3>
+
+  <p>
+    The octal number system has base 8 and uses digits from
+    0 to 7.
+  </p>
+
+  <pre><code>Octal digits:
+0, 1, 2, 3, 4, 5, 6, 7
+
+Example:
+157₈</code></pre>
+
+
+  <h3>4. Hexadecimal Number System</h3>
+
+  <p>
+    The hexadecimal number system has base 16.
+    It uses digits 0 to 9 and letters A to F.
+  </p>
+
+  <table>
+
+    <tr>
+      <th>Decimal</th>
+      <th>Hexadecimal</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>9</td>
+      <td>9</td>
+    </tr>
+
+    <tr>
+      <td>10</td>
+      <td>A</td>
+    </tr>
+
+    <tr>
+      <td>11</td>
+      <td>B</td>
+    </tr>
+
+    <tr>
+      <td>12</td>
+      <td>C</td>
+    </tr>
+
+    <tr>
+      <td>13</td>
+      <td>D</td>
+    </tr>
+
+    <tr>
+      <td>14</td>
+      <td>E</td>
+    </tr>
+
+    <tr>
+      <td>15</td>
+      <td>F</td>
+    </tr>
+
+  </table>
+
+</section>
+
+
+<!-- BINARY CONVERSION -->
+<section id="binary-conversion" class="card">
+
+  <h2>3. Number System Conversion</h2>
+
+  <h3>Decimal to Binary</h3>
+
+  <p>
+    To convert a decimal number into binary, repeatedly divide
+    the number by 2 and record the remainders.
+  </p>
+
+  <p><strong>Example: Convert 13₁₀ to binary.</strong></p>
+
+  <pre><code>13 ÷ 2 = 6   remainder 1
+ 6 ÷ 2 = 3   remainder 0
+ 3 ÷ 2 = 1   remainder 1
+ 1 ÷ 2 = 0   remainder 1
+
+Read remainders from bottom to top:
+
+13₁₀ = 1101₂</code></pre>
+
+
+  <h3>Binary to Decimal</h3>
+
+  <p>
+    Multiply each binary digit by the corresponding power of 2
+    and add the results.
+  </p>
+
+  <p><strong>Example: Convert 1011₂ to decimal.</strong></p>
+
+  <pre><code>1011₂
+
+= 1×2³ + 0×2² + 1×2¹ + 1×2⁰
+
+= 8 + 0 + 2 + 1
+
+= 11₁₀</code></pre>
+
+
+  <h3>Decimal to Octal</h3>
+
+  <p>
+    Repeatedly divide the decimal number by 8 and read the
+    remainders from bottom to top.
+  </p>
+
+  <p><strong>Example: Convert 25₁₀ to octal.</strong></p>
+
+  <pre><code>25 ÷ 8 = 3   remainder 1
+ 3 ÷ 8 = 0   remainder 3
+
+25₁₀ = 31₈</code></pre>
+
+
+  <h3>Decimal to Hexadecimal</h3>
+
+  <p>
+    Repeatedly divide the decimal number by 16 and convert
+    remainders 10–15 into A–F.
+  </p>
+
+  <p><strong>Example: Convert 26₁₀ to hexadecimal.</strong></p>
+
+  <pre><code>26 ÷ 16 = 1   remainder 10
+
+10 = A
+
+Therefore:
+
+26₁₀ = 1A₁₆</code></pre>
+
+
+  <h3>Quick Conversion Table</h3>
+
+  <table>
+
+    <tr>
+      <th>Decimal</th>
+      <th>Binary</th>
+      <th>Octal</th>
+      <th>Hexadecimal</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0000</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0001</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>5</td>
+      <td>0101</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+
+    <tr>
+      <td>10</td>
+      <td>1010</td>
+      <td>12</td>
+      <td>A</td>
+    </tr>
+
+    <tr>
+      <td>15</td>
+      <td>1111</td>
+      <td>17</td>
+      <td>F</td>
+    </tr>
+
+  </table>
+
+</section>
+<!-- LOGIC GATES -->
+<section id="logic-gates" class="card">
+
+  <h2>4. Logic Gates</h2>
+
+  <p>
+    Logic gates are basic building blocks of digital circuits.
+    They perform logical operations on binary inputs and produce
+    binary outputs.
+  </p>
+
+  <h3>Basic Logic Gates</h3>
+
+  <ul>
+    <li>AND Gate</li>
+    <li>OR Gate</li>
+    <li>NOT Gate</li>
+    <li>NAND Gate</li>
+    <li>NOR Gate</li>
+    <li>XOR Gate</li>
+    <li>XNOR Gate</li>
+  </ul>
+
+
+  <h3>1. AND Gate</h3>
+
+  <p>
+    The AND gate produces output 1 only when all inputs are 1.
+  </p>
+
+  <pre><code>Y = A · B</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Y = A·B</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+
+  <h3>2. OR Gate</h3>
+
+  <p>
+    The OR gate produces output 1 when at least one input is 1.
+  </p>
+
+  <pre><code>Y = A + B</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Y = A+B</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+
+  <h3>3. NOT Gate</h3>
+
+  <p>
+    The NOT gate has one input and produces the opposite output.
+  </p>
+
+  <pre><code>Y = A'</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>Y = A'</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </table>
+
+
+  <h3>4. NAND Gate</h3>
+
+  <p>
+    NAND is the combination of AND followed by NOT.
+  </p>
+
+  <pre><code>Y = (A · B)'</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Y</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </table>
+
+
+  <h3>5. NOR Gate</h3>
+
+  <p>
+    NOR is the combination of OR followed by NOT.
+  </p>
+
+  <pre><code>Y = (A + B)'</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Y</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </table>
+
+
+  <h3>6. XOR Gate</h3>
+
+  <p>
+    XOR produces output 1 when the two inputs are different.
+  </p>
+
+  <pre><code>Y = A ⊕ B</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Y</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </table>
+
+
+  <h3>7. XNOR Gate</h3>
+
+  <p>
+    XNOR produces output 1 when the two inputs are the same.
+  </p>
+
+  <pre><code>Y = A ⊙ B</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Y</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+</section>
+
+
+<!-- BOOLEAN ALGEBRA -->
+<section id="boolean-algebra" class="card">
+
+  <h2>5. Boolean Algebra</h2>
+
+  <p>
+    Boolean algebra is a mathematical system used to analyze and
+    simplify digital logic circuits.
+  </p>
+
+  <h3>Basic Boolean Operators</h3>
+
+  <ul>
+    <li><strong>AND:</strong> A · B</li>
+    <li><strong>OR:</strong> A + B</li>
+    <li><strong>NOT:</strong> A'</li>
+  </ul>
+
+  <h3>Important Boolean Laws</h3>
+
+  <table>
+    <tr>
+      <th>Law</th>
+      <th>Expression</th>
+    </tr>
+
+    <tr>
+      <td>Identity Law</td>
+      <td>A + 0 = A &nbsp;&nbsp; A · 1 = A</td>
+    </tr>
+
+    <tr>
+      <td>Null Law</td>
+      <td>A + 1 = 1 &nbsp;&nbsp; A · 0 = 0</td>
+    </tr>
+
+    <tr>
+      <td>Idempotent Law</td>
+      <td>A + A = A &nbsp;&nbsp; A · A = A</td>
+    </tr>
+
+    <tr>
+      <td>Complement Law</td>
+      <td>A + A' = 1 &nbsp;&nbsp; A · A' = 0</td>
+    </tr>
+
+    <tr>
+      <td>Double Complement</td>
+      <td>(A')' = A</td>
+    </tr>
+
+    <tr>
+      <td>Commutative Law</td>
+      <td>A + B = B + A</td>
+    </tr>
+
+    <tr>
+      <td>Associative Law</td>
+      <td>(A+B)+C = A+(B+C)</td>
+    </tr>
+
+    <tr>
+      <td>Distributive Law</td>
+      <td>A(B+C) = AB+AC</td>
+    </tr>
+  </table>
+
+
+  <h3>De Morgan's Laws</h3>
+
+  <p>
+    De Morgan's laws are very important for simplifying Boolean
+    expressions.
+  </p>
+
+  <pre><code>(A + B)' = A' · B'
+
+(A · B)' = A' + B'</code></pre>
+
+  <div class="note">
+    <strong>Exam Tip:</strong>
+    Remember De Morgan's law by changing AND to OR,
+    OR to AND, and complementing every variable.
+  </div>
+
+</section>
+
+
+<!-- TRUTH TABLES -->
+<section id="truth-tables" class="card">
+
+  <h2>6. Truth Tables</h2>
+
+  <p>
+    A truth table shows all possible input combinations and the
+    corresponding output of a logic circuit.
+  </p>
+
+  <h3>Two-Input Truth Table</h3>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>AND</th>
+      <th>OR</th>
+      <th>XOR</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </table>
+
+  <p>
+    For <strong>n inputs</strong>, the number of possible input
+    combinations is:
+  </p>
+
+  <pre><code>Number of combinations = 2ⁿ</code></pre>
+
+  <p>
+    Example: For 3 inputs, there are:
+  </p>
+
+  <pre><code>2³ = 8 combinations</code></pre>
+
+</section>
+<!-- K-MAP -->
+<section id="kmap" class="card">
+
+  <h2>7. Karnaugh Map (K-Map)</h2>
+
+  <p>
+    A Karnaugh Map, or K-Map, is a graphical method used to
+    simplify Boolean expressions. It helps reduce the number of
+    logic gates required in a digital circuit.
+  </p>
+
+  <h3>Purpose of K-Map</h3>
+
+  <ul>
+    <li>Simplifies Boolean expressions.</li>
+    <li>Reduces the number of logic gates.</li>
+    <li>Reduces circuit complexity.</li>
+    <li>Can reduce hardware cost and delay.</li>
+  </ul>
+
+  <h3>2-Variable K-Map</h3>
+
+  <table>
+    <tr>
+      <th>A \ B</th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+
+    <tr>
+      <th>0</th>
+      <td>m₀</td>
+      <td>m₁</td>
+    </tr>
+
+    <tr>
+      <th>1</th>
+      <td>m₂</td>
+      <td>m₃</td>
+    </tr>
+  </table>
+
+  <h3>Important K-Map Rules</h3>
+
+  <ol>
+    <li>Place 1s in the cells corresponding to the given minterms.</li>
+    <li>Make groups containing 1, 2, 4, 8 or more cells.</li>
+    <li>Groups should contain the maximum possible number of cells.</li>
+    <li>Groups can wrap around the edges of the K-Map.</li>
+    <li>Write the simplified Boolean expression from the groups.</li>
+  </ol>
+
+  <h3>Example</h3>
+
+  <p>
+    Consider:
+  </p>
+
+  <pre><code>F(A,B) = Σm(1,3)</code></pre>
+
+  <p>
+    The minterms 1 and 3 are grouped together.
+    In both cells, the value of B remains 1.
+  </p>
+
+  <pre><code>Therefore:
+
+F = B</code></pre>
+
+  <div class="note">
+    <strong>Exam Tip:</strong>
+    Always make the largest possible groups in a K-Map.
+    Groups must contain powers of 2 such as 1, 2, 4, 8, etc.
+  </div>
+
+</section>
+
+
+<!-- COMBINATIONAL CIRCUITS -->
+<section id="combinational" class="card">
+
+  <h2>8. Combinational Circuits</h2>
+
+  <p>
+    A combinational circuit is a digital circuit whose output depends
+    only on the present input values.
+  </p>
+
+  <pre><code>Inputs
+  ↓
+Combinational Circuit
+  ↓
+Outputs</code></pre>
+
+  <h3>Examples</h3>
+
+  <ul>
+    <li>Half Adder</li>
+    <li>Full Adder</li>
+    <li>Half Subtractor</li>
+    <li>Full Subtractor</li>
+    <li>Multiplexer</li>
+    <li>Demultiplexer</li>
+    <li>Encoder</li>
+    <li>Decoder</li>
+  </ul>
+
+
+  <h3>Half Adder</h3>
+
+  <p>
+    A half adder adds two binary bits and produces two outputs:
+    <strong>Sum</strong> and <strong>Carry</strong>.
+  </p>
+
+  <pre><code>Inputs:  A, B
+
+Sum   = A ⊕ B
+Carry = A · B</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Sum</th>
+      <th>Carry</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+
+  <h3>Full Adder</h3>
+
+  <p>
+    A full adder adds three binary inputs:
+    A, B and Carry-in (Cin).
+  </p>
+
+  <pre><code>Inputs:
+A, B, Cin
+
+Sum = A ⊕ B ⊕ Cin
+
+Carry = AB + BCin + ACin</code></pre>
+
+  <table>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>Cin</th>
+      <th>Sum</th>
+      <th>Carry</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+
+  <h3>Multiplexer (MUX)</h3>
+
+  <p>
+    A multiplexer selects one input from multiple inputs and sends
+    the selected input to a single output.
+  </p>
+
+  <pre><code>Multiple Inputs
+      ↓
+    MUX
+      ↓
+ Single Output</code></pre>
+
+  <p>
+    A 4-to-1 multiplexer has 4 input lines, 2 select lines and
+    1 output line.
+  </p>
+
+  <table>
+    <tr>
+      <th>S₁</th>
+      <th>S₀</th>
+      <th>Selected Input</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>I₀</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>I₁</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>I₂</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>I₃</td>
+    </tr>
+  </table>
+
+
+  <h3>Demultiplexer (DEMUX)</h3>
+
+  <p>
+    A demultiplexer takes one input and sends it to one of several
+    output lines according to the select lines.
+  </p>
+
+  <pre><code>Single Input
+     ↓
+   DEMUX
+   ↙  ↓  ↘
+Outputs</code></pre>
+
+
+  <h3>Encoder</h3>
+
+  <p>
+    An encoder converts multiple input lines into a smaller number
+    of binary output lines.
+  </p>
+
+  <pre><code>4 Inputs
+   ↓
+Encoder
+   ↓
+2 Outputs</code></pre>
+
+  <p>
+    Example: A 4-to-2 encoder has 4 input lines and 2 output lines.
+  </p>
+
+
+  <h3>Decoder</h3>
+
+  <p>
+    A decoder converts binary input information into one of several
+    output lines.
+  </p>
+
+  <pre><code>2 Inputs
+   ↓
+Decoder
+   ↓
+4 Outputs</code></pre>
+
+  <p>
+    Example: A 2-to-4 decoder has 2 input lines and 4 output lines.
+  </p>
+
+</section>
+<!-- SEQUENTIAL CIRCUITS -->
+<section id="sequential" class="card">
+
+  <h2>9. Sequential Circuits</h2>
+
+  <p>
+    A sequential circuit is a digital circuit whose output depends on
+    the present input as well as the previous state of the circuit.
+    Therefore, sequential circuits have memory.
+  </p>
+
+  <pre><code>Present Inputs
+      ↓
+Sequential Circuit
+      ↓
+   Outputs
+      ↑
+ Previous State</code></pre>
+
+  <h3>Combinational vs Sequential Circuits</h3>
+
+  <table>
+    <tr>
+      <th>Combinational Circuit</th>
+      <th>Sequential Circuit</th>
+    </tr>
+
+    <tr>
+      <td>Output depends only on present input.</td>
+      <td>Output depends on present input and previous state.</td>
+    </tr>
+
+    <tr>
+      <td>Does not have memory.</td>
+      <td>Has memory.</td>
+    </tr>
+
+    <tr>
+      <td>Usually does not require a clock.</td>
+      <td>Usually works with a clock.</td>
+    </tr>
+
+    <tr>
+      <td>Example: Adder</td>
+      <td>Example: Counter</td>
+    </tr>
+  </table>
+
+
+  <h3>Flip-Flop</h3>
+
+  <p>
+    A flip-flop is a basic memory element that can store one bit
+    of binary information.
+  </p>
+
+  <p>
+    The main types of flip-flops are:
+  </p>
+
+  <ul>
+    <li>SR Flip-Flop</li>
+    <li>JK Flip-Flop</li>
+    <li>D Flip-Flop</li>
+    <li>T Flip-Flop</li>
+  </ul>
+
+
+  <h3>SR Flip-Flop</h3>
+
+  <p>
+    SR stands for <strong>Set-Reset</strong>. It has two main inputs:
+    S (Set) and R (Reset).
+  </p>
+
+  <table>
+    <tr>
+      <th>S</th>
+      <th>R</th>
+      <th>Operation</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>No Change</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>Reset</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>Set</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>Invalid condition*</td>
+    </tr>
+  </table>
+
+  <p>
+    <small>
+      *For the commonly taught NOR-gate SR latch, S=R=1 is the
+      invalid condition. Behavior depends on the specific implementation.
+    </small>
+  </p>
+
+
+  <h3>JK Flip-Flop</h3>
+
+  <p>
+    JK flip-flop is an improved form of the SR flip-flop.
+    It eliminates the invalid input condition found in the
+    basic NOR SR latch.
+  </p>
+
+  <table>
+    <tr>
+      <th>J</th>
+      <th>K</th>
+      <th>Operation</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>No Change</td>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>Reset</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>0</td>
+      <td>Set</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>Toggle</td>
+    </tr>
+  </table>
+
+
+  <h3>D Flip-Flop</h3>
+
+  <p>
+    D flip-flop is also called a data or delay flip-flop.
+    It has a single data input D.
+  </p>
+
+  <pre><code>Q(next) = D</code></pre>
+
+  <p>
+    When the clock triggers the flip-flop, the value of D is
+    transferred to Q.
+  </p>
+
+
+  <h3>T Flip-Flop</h3>
+
+  <p>
+    T flip-flop is called the toggle flip-flop.
+    When T = 1, the output changes to its opposite state.
+  </p>
+
+  <table>
+    <tr>
+      <th>T</th>
+      <th>Operation</th>
+    </tr>
+
+    <tr>
+      <td>0</td>
+      <td>No Change</td>
+    </tr>
+
+    <tr>
+      <td>1</td>
+      <td>Toggle</td>
+    </tr>
+  </table>
+
+</section>
+
+
+<!-- REGISTERS -->
+<section class="card">
+
+  <h2>Registers</h2>
+
+  <p>
+    A register is a group of flip-flops used to store multiple bits
+    of binary information.
+  </p>
+
+  <p>
+    For example, a 4-bit register can store four binary bits.
+  </p>
+
+  <pre><code>Bit 3   Bit 2   Bit 1   Bit 0
+ ↓       ↓       ↓       ↓
+[ FF ]  [ FF ]  [ FF ]  [ FF ]</code></pre>
+
+  <h3>Types of Registers</h3>
+
+  <ul>
+    <li>Serial-In Serial-Out (SISO)</li>
+    <li>Serial-In Parallel-Out (SIPO)</li>
+    <li>Parallel-In Serial-Out (PISO)</li>
+    <li>Parallel-In Parallel-Out (PIPO)</li>
+  </ul>
+
+  <p>
+    Registers are used for temporary data storage and data transfer
+    inside digital systems and processors.
+  </p>
+
+</section>
+
+
+<!-- COUNTERS -->
+<section class="card">
+
+  <h2>Counters</h2>
+
+  <p>
+    A counter is a sequential circuit used to count clock pulses.
+    Counters are generally constructed using flip-flops.
+  </p>
+
+  <h3>Binary Counter</h3>
+
+  <p>
+    A binary counter changes its state according to the incoming
+    clock pulses.
+  </p>
+
+  <pre><code>Clock pulses:
+
+0 → 1 → 2 → 3 → 4 → 5 → ...
+
+Binary:
+
+000 → 001 → 010 → 011 → 100 → 101 → ...</code></pre>
+
+  <h3>Types of Counters</h3>
+
+  <ul>
+    <li><strong>Asynchronous Counter:</strong> Flip-flops do not receive the clock simultaneously.</li>
+    <li><strong>Synchronous Counter:</strong> All flip-flops receive the clock simultaneously.</li>
+    <li><strong>Up Counter:</strong> Counts upward.</li>
+    <li><strong>Down Counter:</strong> Counts downward.</li>
+    <li><strong>Up/Down Counter:</strong> Can count in both directions.</li>
+  </ul>
+
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="card">
+
+  <h2>10. Frequently Asked Questions</h2>
+
+  <h3>1. What is Digital Logic?</h3>
+
+  <p>
+    Digital Logic deals with digital signals represented mainly
+    using binary values 0 and 1.
+  </p>
+
+
+  <h3>2. What is a logic gate?</h3>
+
+  <p>
+    A logic gate is a digital circuit that performs a logical
+    operation on one or more inputs.
+  </p>
+
+
+  <h3>3. What is a K-Map?</h3>
+
+  <p>
+    A Karnaugh Map is a graphical technique used to simplify
+    Boolean expressions.
+  </p>
+
+
+  <h3>4. What is a combinational circuit?</h3>
+
+  <p>
+    A combinational circuit produces an output based only on
+    its present inputs.
+  </p>
+
+
+  <h3>5. What is a sequential circuit?</h3>
+
+  <p>
+    A sequential circuit produces an output based on present
+    inputs and previous states.
+  </p>
+
+
+  <h3>6. What is a flip-flop?</h3>
+
+  <p>
+    A flip-flop is a basic memory element capable of storing
+    one bit of information.
+  </p>
+
+
+  <h3>7. What are the types of flip-flops?</h3>
+
+  <p>
+    The common types are SR, JK, D and T flip-flops.
+  </p>
+
+
+  <h3>8. What is a register?</h3>
+
+  <p>
+    A register is a group of flip-flops used to store multiple
+    bits of binary data.
+  </p>
+
+
+  <h3>9. What is a counter?</h3>
+
+  <p>
+    A counter is a sequential circuit that counts clock pulses.
+  </p>
+
+
+  <h3>10. Where is digital logic used?</h3>
+
+  <p>
+    Digital logic is used in computers, processors, memory,
+    calculators, communication systems and digital control systems.
+  </p>
+
+</section>
+
+
+<!-- CONCLUSION -->
+<section class="card">
+
+  <h2>Conclusion</h2>
+
+  <p>
+    Digital Logic is the foundation of modern digital electronics.
+    Number systems, logic gates and Boolean algebra help us
+    understand how digital circuits operate.
+  </p>
+
+  <p>
+    K-Maps are useful for simplifying Boolean expressions, while
+    combinational circuits perform operations based on current
+    inputs. Sequential circuits use memory elements such as
+    flip-flops, registers and counters.
+  </p>
+
+  <p>
+    Learning these concepts provides a strong foundation for
+    computer architecture, electronics, embedded systems and
+    hardware-related subjects.
+  </p>
+
+</section>
+</main>
+
+</div>
+
+<footer>
+
+  <p>© 2026 Learnix. Learn. Practice. Succeed.</p>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+
+</footer>
+
+</body>
+</html>
