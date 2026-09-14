@@ -2041,3 +2041,96 @@ document.addEventListener("keydown", function (event) {
 // ============================================================
 // PART 3 COMPLETE 🎉
 // ============================================================
+// ============================================================
+// HOMEPAGE FUNCTIONS
+// ============================================================
+
+function scrollToSection(sectionId) {
+
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+        section.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+}
+
+
+// ============================================================
+// GET STARTED MODAL
+// ============================================================
+
+function openModal() {
+
+    showModal("✨ Welcome to Learnix", `
+
+        <p>
+            Start exploring free learning resources.
+        </p>
+
+        <input
+            id="nameInput"
+            type="text"
+            placeholder="Enter your name"
+            maxlength="50"
+            style="
+                width:100%;
+                padding:12px;
+                margin:10px 0;
+                border-radius:8px;
+                border:1px solid #ccc;
+                box-sizing:border-box;
+            "
+        >
+
+        <button
+            class="primary"
+            onclick="continueAction()">
+            Continue →
+        </button>
+
+        <br><br>
+
+        <small>
+            Your name is stored only in your browser.
+        </small>
+
+    `);
+
+}
+
+
+// ============================================================
+// CONTINUE BUTTON
+// ============================================================
+
+function continueAction() {
+
+    const input =
+        document.getElementById("nameInput");
+
+    if (!input || !input.value.trim()) {
+
+        showToast("Please enter your name.");
+
+        return;
+    }
+
+    const name =
+        input.value.trim();
+
+    localStorage.setItem(
+        "learnixName",
+        name
+    );
+
+    closeModal();
+
+    showToast(
+        "Welcome to Learnix, " + name + "! 🎉"
+    );
+
+}
