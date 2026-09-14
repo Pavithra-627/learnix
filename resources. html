@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Learning Resources for Students | Learnix</title>
+
+  <meta
+    name="description"
+    content="Explore free learning resources for students including Java, DBMS, Data Structures, Digital Logic, placement preparation and resume preparation."
+  >
+
+  <meta
+    name="keywords"
+    content="free learning resources, student resources, Java, DBMS, data structures, digital logic, placement preparation, resume preparation"
+  >
+
+  <meta name="author" content="Learnix">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 15px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .page-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 30px;
+    }
+
+    .sidebar {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin: 10px 0;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #2563eb;
+    }
+
+    .content-section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+
+    .content-section h2 {
+      color: #1d4ed8;
+      margin-bottom: 15px;
+    }
+
+    .content-section h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .content-section p {
+      margin-bottom: 12px;
+    }
+
+    .info-box {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 6px;
+    }
+
+    .resource-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 15px 0;
+      background: #fafafa;
+    }
+
+    .resource-card h3 {
+      color: #1d4ed8;
+      margin-top: 0;
+    }
+
+    .resource-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 9px 15px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .resource-card a:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 800px) {
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .page-container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .content-section {
+        padding: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        Learnix
+      </div>
+
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="java.html">Java</a></li>
+        <li><a href="dbms.html">DBMS</a></li>
+        <li><a href="data-structures.html">Data Structures</a></li>
+        <li><a href="digital-logic.html">Digital Logic</a></li>
+        <li><a href="placement.html">Placement</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <h1>Free Learning Resources</h1>
+
+    <p>
+      Explore simple and useful study resources for programming,
+      computer science subjects, placement preparation and career development.
+    </p>
+
+  </section>
+
+
+  <!-- MAIN CONTAINER -->
+  <div class="page-container">
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <h3>Resources</h3>
+
+      <ul>
+        <li><a href="#introduction">1. Introduction</a></li>
+        <li><a href="#how-to-use">2. How to Use Resources</a></li>
+        <li><a href="#java-resource">3. Java</a></li>
+        <li><a href="#dbms-resource">4. DBMS</a></li>
+        <li><a href="#data-structures-resource">5. Data Structures</a></li>
+        <li><a href="#digital-logic-resource">6. Digital Logic</a></li>
+        <li><a href="#placement-resource">7. Placement Preparation</a></li>
+        <li><a href="#resume-resource">8. Resume Preparation</a></li>
+        <li><a href="#study-tips">9. Study Tips</a></li>
+        <li><a href="#faq">10. FAQ</a></li>
+      </ul>
+
+    </aside>
+
+
+    <!-- CONTENT -->
+    <main>
+          <!-- INTRODUCTION -->
+      <section class="content-section" id="introduction">
+
+        <h2>1. Introduction to Learnix Resources</h2>
+
+        <p>
+          Learnix provides free learning resources designed to help students
+          understand important computer science subjects and prepare for
+          academic examinations, coding practice and job opportunities.
+        </p>
+
+        <p>
+          The resources are written in simple language so that beginners can
+          learn concepts step by step. Students can use these materials for
+          revision, exam preparation, interview preparation and self-learning.
+        </p>
+
+        <div class="info-box">
+
+          <strong>What can you learn?</strong>
+
+          <p>
+            You can study Java programming, DBMS, Data Structures,
+            Digital Logic, placement preparation and resume preparation
+            using the resources available on Learnix.
+          </p>
+
+        </div>
+
+        <h3>Who can use these resources?</h3>
+
+        <ul>
+          <li>College students</li>
+          <li>Computer science beginners</li>
+          <li>Students preparing for examinations</li>
+          <li>Students learning programming</li>
+          <li>Freshers preparing for placements</li>
+          <li>Students preparing resumes and interviews</li>
+        </ul>
+
+      </section>
+
+
+      <!-- HOW TO USE -->
+      <section class="content-section" id="how-to-use">
+
+        <h2>2. How to Use These Resources</h2>
+
+        <p>
+          Students can follow a simple learning process to make better use
+          of the resources.
+        </p>
+
+        <h3>Step 1: Choose a Subject</h3>
+
+        <p>
+          Select the subject or career topic that you want to learn.
+          For example, you can start with Java if you are learning
+          programming.
+        </p>
+
+        <h3>Step 2: Learn the Basics</h3>
+
+        <p>
+          Read the basic concepts first. Understanding fundamentals makes
+          advanced topics easier to learn.
+        </p>
+
+        <h3>Step 3: Practice</h3>
+
+        <p>
+          After learning a concept, practice examples and programming
+          problems. Practice helps improve understanding and memory.
+        </p>
+
+        <h3>Step 4: Revise</h3>
+
+        <p>
+          Review important definitions, examples and questions regularly.
+          Short revision sessions can help before examinations and interviews.
+        </p>
+
+        <h3>Step 5: Apply Your Knowledge</h3>
+
+        <p>
+          Try to use what you learn in projects, coding exercises,
+          assignments or interview questions.
+        </p>
+
+        <div class="info-box">
+
+          <strong>Simple learning method:</strong>
+
+          <p>
+            Learn → Understand → Practice → Revise → Apply
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- JAVA RESOURCE -->
+      <section class="content-section" id="java-resource">
+
+        <h2>3. Java Learning Resources</h2>
+
+        <p>
+          Java is a popular programming language used for software
+          development, web applications, Android development and many
+          enterprise applications.
+        </p>
+
+        <p>
+          Beginners can start with Java fundamentals and gradually learn
+          object-oriented programming and exception handling.
+        </p>
+
+        <div class="resource-card">
+
+          <h3>Java Basics</h3>
+
+          <p>
+            Learn Java syntax, variables, data types, operators,
+            conditional statements, loops and arrays.
+          </p>
+
+          <a href="java.html">
+            Learn Java
+          </a>
+
+        </div>
+
+        <h3>Important Java Topics</h3>
+
+        <ul>
+          <li>Introduction to Java</li>
+          <li>Variables and Data Types</li>
+          <li>Operators</li>
+          <li>Conditional Statements</li>
+          <li>Loops</li>
+          <li>Arrays</li>
+          <li>Classes and Objects</li>
+          <li>Constructors</li>
+          <li>Inheritance</li>
+          <li>Interfaces</li>
+          <li>Exception Handling</li>
+          <li>Method Overloading and Overriding</li>
+        </ul>
+
+      </section>
+          <!-- DBMS RESOURCE -->
+      <section class="content-section" id="dbms-resource">
+
+        <h2>4. DBMS Learning Resources</h2>
+
+        <p>
+          A Database Management System (DBMS) is software used to create,
+          store, organize, manage and retrieve data efficiently.
+        </p>
+
+        <p>
+          DBMS is an important subject for computer science students and is
+          also commonly discussed in technical interviews.
+        </p>
+
+        <div class="resource-card">
+
+          <h3>DBMS Basics</h3>
+
+          <p>
+            Learn databases, DBMS concepts, tables, keys, SQL,
+            relationships, normalization and transactions.
+          </p>
+
+          <a href="dbms.html">
+            Learn DBMS
+          </a>
+
+        </div>
+
+        <h3>Important DBMS Topics</h3>
+
+        <ul>
+          <li>Database and DBMS</li>
+          <li>Database Models</li>
+          <li>Tables and Records</li>
+          <li>Primary Key and Foreign Key</li>
+          <li>SQL Commands</li>
+          <li>CRUD Operations</li>
+          <li>Relationships</li>
+          <li>Normalization</li>
+          <li>Transactions</li>
+          <li>ACID Properties</li>
+        </ul>
+
+        <div class="info-box">
+
+          <strong>Study Tip:</strong>
+
+          <p>
+            Practice SQL queries along with the theory. Writing queries
+            regularly makes database concepts easier to understand.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- DATA STRUCTURES RESOURCE -->
+      <section class="content-section" id="data-structures-resource">
+
+        <h2>5. Data Structures Learning Resources</h2>
+
+        <p>
+          Data structures are methods of organizing and storing data so that
+          it can be accessed and processed efficiently.
+        </p>
+
+        <p>
+          Learning data structures helps students improve programming,
+          problem-solving and technical interview skills.
+        </p>
+
+        <div class="resource-card">
+
+          <h3>Data Structures Basics</h3>
+
+          <p>
+            Learn arrays, linked lists, stacks, queues, trees, heaps,
+            hashing, graphs, searching and sorting.
+          </p>
+
+          <a href="data-structures.html">
+            Learn Data Structures
+          </a>
+
+        </div>
+
+        <h3>Important Data Structure Topics</h3>
+
+        <ul>
+          <li>Arrays</li>
+          <li>Linked Lists</li>
+          <li>Stacks</li>
+          <li>Queues</li>
+          <li>Trees</li>
+          <li>Heaps</li>
+          <li>Hashing</li>
+          <li>Graphs</li>
+          <li>Searching Algorithms</li>
+          <li>Sorting Algorithms</li>
+          <li>Time Complexity</li>
+          <li>Space Complexity</li>
+        </ul>
+
+        <h3>Why Learn Data Structures?</h3>
+
+        <p>
+          Data structures help students write efficient programs and
+          understand how data is stored, searched and processed.
+          They are also useful for coding tests and technical interviews.
+        </p>
+
+      </section>
+          <!-- DIGITAL LOGIC RESOURCE -->
+      <section class="content-section" id="digital-logic-resource">
+
+        <h2>6. Digital Logic Learning Resources</h2>
+
+        <p>
+          Digital Logic Design is an important foundation of computer
+          science and computer engineering. It explains how digital
+          systems represent, process and store information.
+        </p>
+
+        <p>
+          Students can learn number systems, logic gates, Boolean algebra,
+          truth tables, K-maps and digital circuits step by step.
+        </p>
+
+        <div class="resource-card">
+
+          <h3>Digital Logic Basics</h3>
+
+          <p>
+            Learn number systems, logic gates, Boolean algebra,
+            K-maps, combinational circuits and sequential circuits.
+          </p>
+
+          <a href="digital-logic.html">
+            Learn Digital Logic
+          </a>
+
+        </div>
+
+        <h3>Important Topics</h3>
+
+        <ul>
+          <li>Number Systems</li>
+          <li>Binary Conversion</li>
+          <li>Logic Gates</li>
+          <li>Boolean Algebra</li>
+          <li>Truth Tables</li>
+          <li>K-Maps</li>
+          <li>Half Adder and Full Adder</li>
+          <li>Multiplexers and Demultiplexers</li>
+          <li>Encoders and Decoders</li>
+          <li>Flip-Flops</li>
+          <li>Registers</li>
+          <li>Counters</li>
+        </ul>
+
+      </section>
+
+
+      <!-- PLACEMENT RESOURCE -->
+      <section class="content-section" id="placement-resource">
+
+        <h2>7. Placement Preparation Resources</h2>
+
+        <p>
+          Placement preparation helps students get ready for aptitude
+          tests, coding assessments, technical interviews and HR interviews.
+        </p>
+
+        <p>
+          A consistent preparation routine can help students improve their
+          problem-solving ability, technical knowledge and communication
+          skills.
+        </p>
+
+        <div class="resource-card">
+
+          <h3>Placement Preparation Guide</h3>
+
+          <p>
+            Learn about aptitude, logical reasoning, verbal ability,
+            coding preparation, technical interviews, HR interviews
+            and job preparation.
+          </p>
+
+          <a href="placement.html">
+            Start Placement Preparation
+          </a>
+
+        </div>
+
+        <h3>Important Placement Areas</h3>
+
+        <ul>
+          <li>Aptitude Preparation</li>
+          <li>Logical Reasoning</li>
+          <li>Verbal Ability</li>
+          <li>Coding Practice</li>
+          <li>Technical Interview Preparation</li>
+          <li>Communication Skills</li>
+          <li>Resume Preparation</li>
+          <li>HR Interview Preparation</li>
+          <li>Mock Interviews</li>
+          <li>Job Preparation</li>
+        </ul>
+
+        <div class="info-box">
+
+          <strong>Placement Tip:</strong>
+
+          <p>
+            Practice a little every day instead of preparing only a few
+            days before an interview. Regular practice helps build
+            confidence and consistency.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- RESUME RESOURCE -->
+      <section class="content-section" id="resume-resource">
+
+        <h2>8. Resume Preparation Resources</h2>
+
+        <p>
+          A resume is a short document that presents a student's education,
+          skills, projects, experience and achievements to potential
+          employers.
+        </p>
+
+        <p>
+          A well-organized resume helps recruiters quickly understand a
+          candidate's background and relevant skills.
+        </p>
+
+        <div class="resource-card">
+
+          <h3>Resume Preparation Guide</h3>
+
+          <p>
+            Learn how to create a professional resume, choose the right
+            sections, describe projects, list skills and prepare an
+            ATS-friendly resume.
+          </p>
+
+          <a href="resume.html">
+            Learn Resume Preparation
+          </a>
+
+        </div>
+
+        <h3>Important Resume Topics</h3>
+
+        <ul>
+          <li>Resume Structure</li>
+          <li>Contact Details</li>
+          <li>Career Summary</li>
+          <li>Education</li>
+          <li>Technical Skills</li>
+          <li>Projects</li>
+          <li>Internships and Experience</li>
+          <li>Certifications</li>
+          <li>Achievements</li>
+          <li>Resume Formatting</li>
+          <li>ATS-Friendly Resume</li>
+          <li>Common Resume Mistakes</li>
+        </ul>
+
+      </section>
+      <!-- STUDY TIPS -->
+      <section class="content-section" id="study-tips">
+
+        <h2>9. Study Tips for Students</h2>
+
+        <p>
+          Good study habits can make learning more effective and help
+          students manage academic and career preparation together.
+        </p>
+
+        <h3>1. Create a Study Schedule</h3>
+
+        <p>
+          Plan your study time and divide larger topics into smaller
+          sections. A simple schedule can help you stay consistent.
+        </p>
+
+        <h3>2. Understand Before Memorizing</h3>
+
+        <p>
+          Try to understand the meaning of a concept before memorizing
+          definitions or answers.
+        </p>
+
+        <h3>3. Practice Regularly</h3>
+
+        <p>
+          Practice coding problems, SQL queries, numerical questions
+          and important exam questions regularly.
+        </p>
+
+        <h3>4. Make Short Notes</h3>
+
+        <p>
+          Write important formulas, definitions, examples and key points
+          in your own words for quick revision.
+        </p>
+
+        <h3>5. Revise Frequently</h3>
+
+        <p>
+          Regular revision helps you remember concepts for a longer time
+          and makes examination preparation easier.
+        </p>
+
+        <h3>6. Work on Communication</h3>
+
+        <p>
+          Students preparing for placements should also practice speaking,
+          explaining technical concepts and answering interview questions.
+        </p>
+
+        <div class="info-box">
+
+          <strong>Simple Study Routine:</strong>
+
+          <p>
+            Learn a concept → Practice it → Make notes → Revise it →
+            Test yourself.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- FAQ -->
+      <section class="content-section" id="faq">
+
+        <h2>10. Frequently Asked Questions</h2>
+
+        <h3>1. Are the Learnix resources useful for beginners?</h3>
+
+        <p>
+          Yes. The resources are written in simple language and introduce
+          important concepts step by step.
+        </p>
+
+        <h3>2. What subjects are available?</h3>
+
+        <p>
+          Learnix currently provides resources covering Java, DBMS,
+          Data Structures, Digital Logic, placement preparation and
+          resume preparation.
+        </p>
+
+        <h3>3. Can I use these resources for exam preparation?</h3>
+
+        <p>
+          Yes. Students can use the explanations, examples and topic
+          lists for learning and revision before examinations.
+        </p>
+
+        <h3>4. Can beginners learn Java from Learnix?</h3>
+
+        <p>
+          Yes. The Java resource starts with basic programming concepts
+          and gradually introduces important object-oriented programming
+          topics.
+        </p>
+
+        <h3>5. Why are Data Structures important?</h3>
+
+        <p>
+          Data Structures help students understand how data can be
+          organized and processed efficiently. They are also useful
+          for coding tests and technical interviews.
+        </p>
+
+        <h3>6. Is DBMS useful for placements?</h3>
+
+        <p>
+          Yes. Database concepts and SQL are commonly useful in software
+          development and technical interview preparation.
+        </p>
+
+        <h3>7. What should I study for placements?</h3>
+
+        <p>
+          Students can prepare aptitude, logical reasoning, verbal ability,
+          coding, technical subjects, communication skills and interview
+          questions.
+        </p>
+
+        <h3>8. Why is resume preparation important?</h3>
+
+        <p>
+          A resume presents your education, skills, projects and experience
+          to employers. A clear resume can make it easier for recruiters
+          to understand your profile.
+        </p>
+
+        <h3>9. How often should I study?</h3>
+
+        <p>
+          Consistent daily study is generally more effective than studying
+          only immediately before an examination or interview.
+        </p>
+
+        <h3>10. Can I use Learnix resources for self-learning?</h3>
+
+        <p>
+          Yes. Students can use the resources as a starting point for
+          learning concepts, practicing and revising important topics.
+        </p>
+
+      </section>
+
+
+      <!-- CONCLUSION -->
+      <section class="content-section">
+
+        <h2>Conclusion</h2>
+
+        <p>
+          Learnix brings together useful learning materials for students
+          in one place. Students can learn programming, computer science
+          subjects, placement skills and resume preparation through
+          structured resources.
+        </p>
+
+        <p>
+          The best way to benefit from these resources is to learn
+          consistently, practice regularly and apply the knowledge through
+          projects, coding exercises and interview preparation.
+        </p>
+
+        <div class="info-box">
+
+          <strong>Keep Learning:</strong>
+
+          <p>
+            Choose one topic, understand the basics, practice it and
+            gradually move to more advanced concepts.
+          </p>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 Learnix. All rights reserved.
+    </p>
+
+    <p>
+      <a href="index.html">Home</a>
+      <a href="java.html">Java</a>
+      <a href="dbms.html">DBMS</a>
+      <a href="data-structures.html">Data Structures</a>
+      <a href="digital-logic.html">Digital Logic</a>
+      <a href="placement.html">Placement</a>
+      <a href="resume.html">Resume</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </p>
+
+  </footer>
+
+
+</body>
+
+</html>
+    
