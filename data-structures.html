@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Data Structures: Complete Beginner's Guide | Learnix</title>
+
+  <meta name="description"
+        content="Learn data structures with simple explanations of arrays, linked lists, stacks, queues, trees, heaps, hashing, graphs, searching and sorting.">
+
+  <meta name="author" content="Learnix">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      background: #f6f8fb;
+      color: #222;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #222;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin: 0 8px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 60px 6%;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #eef2ff;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 25px;
+    }
+
+    .toc {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+    }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      text-decoration: none;
+      color: #444;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    h3 {
+      margin-top: 25px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .highlight {
+      padding: 15px;
+      background: #f1f5f9;
+      border-left: 4px solid #555;
+      margin: 20px 0;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #ffffff;
+      padding: 18px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+    }
+
+    details {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #444;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">📚 Learnix</a>
+
+    <div>
+      <a href="index.html">Home</a>
+      <a href="index.html#study">Study</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="index.html#career">Career</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="badge">🌳 Learnix Data Structures Guide</span>
+
+  <h1>Data Structures: A Complete Beginner's Guide</h1>
+
+  <p>
+    Learn data structures with simple explanations, examples,
+    algorithms and practical programming concepts.
+  </p>
+</section>
+
+<div class="container">
+
+  <aside class="toc">
+    <h3>Contents</h3>
+
+    <a href="#introduction">1. Introduction</a>
+    <a href="#classification">2. Classification</a>
+    <a href="#arrays">3. Arrays</a>
+    <a href="#linked-list">4. Linked Lists</a>
+    <a href="#stack">5. Stack</a>
+    <a href="#queue">6. Queue</a>
+    <a href="#trees">7. Trees</a>
+    <a href="#heap">8. Heap</a>
+    <a href="#hashing">9. Hashing</a>
+    <a href="#graphs">10. Graphs</a>
+    <a href="#searching">11. Searching</a>
+    <a href="#sorting">12. Sorting</a>
+    <a href="#complexity">13. Complexity</a>
+    <a href="#faq">14. FAQ</a>
+  </aside>
+
+  <main>
+
+<section id="introduction" class="card">
+  <h2>1. Introduction to Data Structures</h2>
+
+  <p>
+    A data structure is a method of organizing and storing data so that
+    it can be accessed and processed efficiently.
+  </p>
+
+  <p>
+    Choosing a suitable data structure can make a program easier to
+    design and can improve the efficiency of operations such as searching,
+    insertion, deletion and sorting.
+  </p>
+
+  <div class="highlight">
+    <strong>Simple definition:</strong>
+    A data structure organizes data in a way that makes operations on
+    the data efficient and manageable.
+  </div>
+
+  <h3>Why Learn Data Structures?</h3>
+
+  <ul>
+    <li>Helps organize large amounts of data.</li>
+    <li>Improves program efficiency.</li>
+    <li>Makes searching and sorting easier.</li>
+    <li>Supports efficient memory usage.</li>
+    <li>Important for software development and technical interviews.</li>
+  </ul>
+</section>
+
+
+<section id="classification" class="card">
+  <h2>2. Classification of Data Structures</h2>
+
+  <p>
+    Data structures can be broadly classified into linear and
+    non-linear data structures.
+  </p>
+
+  <table>
+    <tr>
+      <th>Type</th>
+      <th>Examples</th>
+    </tr>
+
+    <tr>
+      <td>Linear</td>
+      <td>Array, Linked List, Stack, Queue</td>
+    </tr>
+
+    <tr>
+      <td>Non-Linear</td>
+      <td>Tree, Graph</td>
+    </tr>
+  </table>
+
+  <h3>Linear Data Structures</h3>
+
+  <p>
+    In a linear data structure, elements are arranged sequentially.
+    Each element generally has a logical predecessor and successor,
+    except at the ends.
+  </p>
+
+  <h3>Non-Linear Data Structures</h3>
+
+  <p>
+    In a non-linear data structure, elements are not arranged in one
+    simple sequence. Trees and graphs are common examples.
+  </p>
+</section>
+
+
+<section id="arrays" class="card">
+  <h2>3. Arrays</h2>
+
+  <p>
+    An array stores multiple values of the same data type under one
+    variable name. Elements are accessed using an index.
+  </p>
+
+  <pre><code>int[] numbers = {10, 20, 30, 40, 50};
+
+System.out.println(numbers[0]);
+System.out.println(numbers[3]);</code></pre>
+
+  <h3>Advantages</h3>
+
+  <ul>
+    <li>Simple to use.</li>
+    <li>Fast access using an index.</li>
+    <li>Useful when the number of elements is known.</li>
+  </ul>
+
+  <h3>Limitation</h3>
+
+  <p>
+    A normal Java array has a fixed size after creation.
+  </p>
+</section>
+<!-- LINKED LIST -->
+<section id="linked-list" class="card">
+  <h2>3. Linked List</h2>
+
+  <p>
+    A linked list is a linear data structure where elements are stored in
+    separate nodes. Each node contains data and a reference to the next node.
+  </p>
+
+  <h3>Structure of a Node</h3>
+
+  <pre><code>Data | Next → Data | Next → Data | NULL</code></pre>
+
+  <h3>Singly Linked List</h3>
+
+  <p>
+    In a singly linked list, every node points to the next node.
+    The last node points to NULL.
+  </p>
+
+  <pre><code>class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}</code></pre>
+
+  <h3>Advantages</h3>
+  <ul>
+    <li>Dynamic size</li>
+    <li>Easy insertion and deletion</li>
+    <li>Memory is allocated when required</li>
+  </ul>
+
+  <h3>Disadvantages</h3>
+  <ul>
+    <li>Extra memory is needed for links</li>
+    <li>Random access is not possible</li>
+    <li>Searching can be slower than arrays</li>
+  </ul>
+</section>
+
+
+<!-- STACK -->
+<section id="stack" class="card">
+  <h2>4. Stack</h2>
+
+  <p>
+    A stack is a linear data structure that follows the
+    <strong>LIFO (Last In, First Out)</strong> principle.
+  </p>
+
+  <pre><code>        TOP
+         ↓
+       | 30 |
+       | 20 |
+       | 10 |
+       -----</code></pre>
+
+  <h3>Basic Stack Operations</h3>
+
+  <ul>
+    <li><strong>Push:</strong> Adds an element to the top.</li>
+    <li><strong>Pop:</strong> Removes the top element.</li>
+    <li><strong>Peek:</strong> Displays the top element.</li>
+    <li><strong>isEmpty:</strong> Checks whether the stack is empty.</li>
+  </ul>
+
+  <h3>Example in Java</h3>
+
+  <pre><code>import java.util.ArrayDeque;
+
+class StackExample {
+    public static void main(String[] args) {
+
+        ArrayDeque&lt;Integer&gt; stack = new ArrayDeque&lt;&gt;();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println("Top: " + stack.peek());
+
+        stack.pop();
+
+        System.out.println("After pop: " + stack.peek());
+    }
+}</code></pre>
+
+  <p>
+    <strong>Applications:</strong> Function calls, undo operations,
+    expression evaluation, browser history and backtracking.
+  </p>
+</section>
+
+
+<!-- QUEUE -->
+<section id="queue" class="card">
+  <h2>5. Queue</h2>
+
+  <p>
+    A queue is a linear data structure that follows the
+    <strong>FIFO (First In, First Out)</strong> principle.
+  </p>
+
+  <pre><code>FRONT                         REAR
+  ↓                              ↓
+| 10 | → | 20 | → | 30 |
+  Remove                    Add</code></pre>
+
+  <h3>Basic Queue Operations</h3>
+
+  <ul>
+    <li><strong>Enqueue:</strong> Adds an element to the rear.</li>
+    <li><strong>Dequeue:</strong> Removes an element from the front.</li>
+    <li><strong>Peek:</strong> Displays the front element.</li>
+    <li><strong>isEmpty:</strong> Checks whether the queue is empty.</li>
+  </ul>
+
+  <h3>Example in Java</h3>
+
+  <pre><code>import java.util.ArrayDeque;
+
+class QueueExample {
+    public static void main(String[] args) {
+
+        ArrayDeque&lt;Integer&gt; queue = new ArrayDeque&lt;&gt;();
+
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+
+        System.out.println("Front: " + queue.peek());
+
+        queue.remove();
+
+        System.out.println("After remove: " + queue.peek());
+    }
+}</code></pre>
+
+  <p>
+    <strong>Applications:</strong> CPU scheduling, printer queues,
+    customer service systems and task scheduling.
+  </p>
+</section>
+
+
+<!-- TREES -->
+<section id="trees" class="card">
+  <h2>6. Trees</h2>
+
+  <p>
+    A tree is a non-linear data structure that represents data in a
+    hierarchical form. It consists of nodes connected by edges.
+  </p>
+
+  <h3>Basic Tree Structure</h3>
+
+  <pre><code>              10
+             /  \
+            5    15
+           / \     \
+          2   7     20</code></pre>
+
+  <h3>Important Tree Terms</h3>
+
+  <ul>
+    <li><strong>Root:</strong> The topmost node of a tree.</li>
+    <li><strong>Parent:</strong> A node that has one or more children.</li>
+    <li><strong>Child:</strong> A node connected below another node.</li>
+    <li><strong>Leaf:</strong> A node that has no children.</li>
+    <li><strong>Edge:</strong> Connection between two nodes.</li>
+    <li><strong>Height:</strong> The longest path from a node to a leaf.</li>
+  </ul>
+
+  <h3>Binary Tree</h3>
+
+  <p>
+    A binary tree is a tree in which each node can have at most two
+    children: a left child and a right child.
+  </p>
+
+  <pre><code>class Node {
+    int data;
+    Node left;
+    Node right;
+
+    Node(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}</code></pre>
+
+  <h3>Tree Traversals</h3>
+
+  <ul>
+    <li><strong>Preorder:</strong> Root → Left → Right</li>
+    <li><strong>Inorder:</strong> Left → Root → Right</li>
+    <li><strong>Postorder:</strong> Left → Right → Root</li>
+  </ul>
+
+  <p>
+    Tree data structures are commonly used in searching, databases,
+    file systems and hierarchical data representation.
+  </p>
+</section>
+<!-- HEAP -->
+<section id="heap" class="card">
+  <h2>7. Heap</h2>
+
+  <p>
+    A heap is a special type of binary tree that satisfies the heap property.
+    It is commonly used in priority queues and heap sort.
+  </p>
+
+  <h3>Types of Heap</h3>
+
+  <ul>
+    <li><strong>Max Heap:</strong> The parent node is greater than or equal to its children.</li>
+    <li><strong>Min Heap:</strong> The parent node is smaller than or equal to its children.</li>
+  </ul>
+
+  <h3>Max Heap Example</h3>
+
+  <pre><code>              50
+             /  \
+           30    40
+          / \    /
+        10  20  35</code></pre>
+
+  <p>
+    In a max heap, the largest element is always present at the root.
+  </p>
+
+  <h3>Applications</h3>
+
+  <ul>
+    <li>Priority queues</li>
+    <li>Heap sort</li>
+    <li>Scheduling algorithms</li>
+    <li>Finding minimum or maximum elements</li>
+  </ul>
+</section>
+
+
+<!-- HASHING -->
+<section id="hashing" class="card">
+  <h2>8. Hashing</h2>
+
+  <p>
+    Hashing is a technique used to store and retrieve data quickly.
+    A hash function converts a key into an index of a hash table.
+  </p>
+
+  <h3>Basic Hash Function</h3>
+
+  <pre><code>h(key) = key % table_size</code></pre>
+
+  <p>
+    For example, if the table size is 10 and the key is 25:
+  </p>
+
+  <pre><code>h(25) = 25 % 10
+      = 5</code></pre>
+
+  <p>
+    Therefore, the key 25 can be stored at index 5.
+  </p>
+
+  <h3>Collision</h3>
+
+  <p>
+    A collision occurs when two different keys produce the same hash index.
+  </p>
+
+  <h3>Collision Resolution Techniques</h3>
+
+  <ul>
+    <li><strong>Separate Chaining:</strong> Uses a linked list at each index.</li>
+    <li><strong>Linear Probing:</strong> Searches the next available position.</li>
+    <li><strong>Quadratic Probing:</strong> Uses quadratic increments to find a position.</li>
+    <li><strong>Double Hashing:</strong> Uses a second hash function.</li>
+  </ul>
+
+  <h3>Advantages of Hashing</h3>
+
+  <ul>
+    <li>Fast searching</li>
+    <li>Fast insertion</li>
+    <li>Fast deletion</li>
+    <li>Efficient data retrieval</li>
+  </ul>
+</section>
+
+
+<!-- GRAPHS -->
+<section id="graphs" class="card">
+  <h2>9. Graphs</h2>
+
+  <p>
+    A graph is a non-linear data structure consisting of vertices
+    (nodes) and edges (connections).
+  </p>
+
+  <h3>Simple Graph</h3>
+
+  <pre><code>       A
+      / \
+     /   \
+    B-----C
+     \
+      \
+       D</code></pre>
+
+  <h3>Important Terms</h3>
+
+  <ul>
+    <li><strong>Vertex:</strong> A node in a graph.</li>
+    <li><strong>Edge:</strong> A connection between two vertices.</li>
+    <li><strong>Degree:</strong> Number of edges connected to a vertex.</li>
+    <li><strong>Path:</strong> A sequence of connected vertices.</li>
+    <li><strong>Cycle:</strong> A path that starts and ends at the same vertex.</li>
+  </ul>
+
+  <h3>Types of Graphs</h3>
+
+  <ul>
+    <li><strong>Directed Graph:</strong> Edges have a direction.</li>
+    <li><strong>Undirected Graph:</strong> Edges have no direction.</li>
+    <li><strong>Weighted Graph:</strong> Edges have associated weights.</li>
+    <li><strong>Unweighted Graph:</strong> Edges do not have weights.</li>
+  </ul>
+
+  <h3>Graph Traversals</h3>
+
+  <p>
+    Two common graph traversal techniques are:
+  </p>
+
+  <ul>
+    <li><strong>BFS:</strong> Breadth First Search uses a queue.</li>
+    <li><strong>DFS:</strong> Depth First Search uses a stack or recursion.</li>
+  </ul>
+
+  <p>
+    Graphs are used in social networks, maps, computer networks,
+    recommendation systems and route planning.
+  </p>
+</section>
+<!-- SEARCHING -->
+<section id="searching" class="card">
+  <h2>10. Searching</h2>
+
+  <p>
+    Searching is the process of finding a particular element in a
+    collection of data.
+  </p>
+
+  <h3>Linear Search</h3>
+
+  <p>
+    Linear search checks each element one by one until the required
+    element is found.
+  </p>
+
+  <pre><code>int[] arr = {10, 20, 30, 40, 50};
+int key = 30;
+
+for (int i = 0; i &lt; arr.length; i++) {
+    if (arr[i] == key) {
+        System.out.println("Element found at index " + i);
+        break;
+    }
+}</code></pre>
+
+  <p>
+    <strong>Time Complexity:</strong> O(n)
+  </p>
+
+  <h3>Binary Search</h3>
+
+  <p>
+    Binary search works on a sorted array. It repeatedly divides the
+    search range into two halves.
+  </p>
+
+  <pre><code>int[] arr = {10, 20, 30, 40, 50};
+int key = 40;
+
+int low = 0;
+int high = arr.length - 1;
+
+while (low &lt;= high) {
+    int mid = (low + high) / 2;
+
+    if (arr[mid] == key) {
+        System.out.println("Element found");
+        break;
+    }
+    else if (arr[mid] &lt; key) {
+        low = mid + 1;
+    }
+    else {
+        high = mid - 1;
+    }
+}</code></pre>
+
+  <p>
+    <strong>Time Complexity:</strong> O(log n)
+  </p>
+</section>
+
+
+<!-- SORTING -->
+<section id="sorting" class="card">
+  <h2>11. Sorting</h2>
+
+  <p>
+    Sorting is the process of arranging data in a particular order,
+    usually ascending or descending order.
+  </p>
+
+  <h3>Common Sorting Algorithms</h3>
+
+  <ul>
+    <li>Bubble Sort</li>
+    <li>Selection Sort</li>
+    <li>Insertion Sort</li>
+    <li>Merge Sort</li>
+    <li>Quick Sort</li>
+    <li>Heap Sort</li>
+  </ul>
+
+  <h3>Bubble Sort</h3>
+
+  <p>
+    Bubble sort repeatedly compares adjacent elements and swaps them
+    if they are in the wrong order.
+  </p>
+
+  <pre><code>int[] arr = {5, 3, 8, 1, 2};
+
+for (int i = 0; i &lt; arr.length - 1; i++) {
+
+    for (int j = 0; j &lt; arr.length - i - 1; j++) {
+
+        if (arr[j] &gt; arr[j + 1]) {
+            int temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
+    }
+}
+
+for (int x : arr) {
+    System.out.print(x + " ");
+}</code></pre>
+
+  <p>
+    <strong>Time Complexity:</strong> O(n²) in the average and worst cases.
+  </p>
+
+  <h3>Sorting Comparison</h3>
+
+  <table>
+    <tr>
+      <th>Algorithm</th>
+      <th>Average Time</th>
+      <th>Worst Time</th>
+    </tr>
+    <tr>
+      <td>Bubble Sort</td>
+      <td>O(n²)</td>
+      <td>O(n²)</td>
+    </tr>
+    <tr>
+      <td>Selection Sort</td>
+      <td>O(n²)</td>
+      <td>O(n²)</td>
+    </tr>
+    <tr>
+      <td>Insertion Sort</td>
+      <td>O(n²)</td>
+      <td>O(n²)</td>
+    </tr>
+    <tr>
+      <td>Merge Sort</td>
+      <td>O(n log n)</td>
+      <td>O(n log n)</td>
+    </tr>
+    <tr>
+      <td>Quick Sort</td>
+      <td>O(n log n)</td>
+      <td>O(n²)</td>
+    </tr>
+    <tr>
+      <td>Heap Sort</td>
+      <td>O(n log n)</td>
+      <td>O(n log n)</td>
+    </tr>
+  </table>
+</section>
+
+
+<!-- COMPLEXITY -->
+<section id="complexity" class="card">
+  <h2>12. Time and Space Complexity</h2>
+
+  <p>
+    Complexity helps us measure how efficiently an algorithm uses
+    time and memory.
+  </p>
+
+  <h3>Time Complexity</h3>
+
+  <p>
+    Time complexity describes how the running time of an algorithm
+    increases as the input size increases.
+  </p>
+
+  <h3>Common Time Complexities</h3>
+
+  <table>
+    <tr>
+      <th>Complexity</th>
+      <th>Name</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>O(1)</td>
+      <td>Constant</td>
+      <td>Accessing an array element</td>
+    </tr>
+    <tr>
+      <td>O(log n)</td>
+      <td>Logarithmic</td>
+      <td>Binary Search</td>
+    </tr>
+    <tr>
+      <td>O(n)</td>
+      <td>Linear</td>
+      <td>Linear Search</td>
+    </tr>
+    <tr>
+      <td>O(n log n)</td>
+      <td>Linearithmic</td>
+      <td>Merge Sort</td>
+    </tr>
+    <tr>
+      <td>O(n²)</td>
+      <td>Quadratic</td>
+      <td>Bubble Sort</td>
+    </tr>
+  </table>
+
+  <h3>Space Complexity</h3>
+
+  <p>
+    Space complexity describes the amount of extra memory required
+    by an algorithm while it is running.
+  </p>
+
+  <p>
+    Efficient algorithms try to reduce both execution time and
+    unnecessary memory usage.
+  </p>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" class="card">
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>1. What is a data structure?</h3>
+  <p>
+    A data structure is a method of organizing and storing data so
+    that it can be accessed and processed efficiently.
+  </p>
+
+  <h3>2. What are the main types of data structures?</h3>
+  <p>
+    Data structures are mainly classified into linear and non-linear
+    data structures.
+  </p>
+
+  <h3>3. What is an array?</h3>
+  <p>
+    An array stores multiple elements of the same type in contiguous
+    memory locations.
+  </p>
+
+  <h3>4. What is a stack?</h3>
+  <p>
+    A stack is a linear data structure that follows LIFO
+    (Last In, First Out).
+  </p>
+
+  <h3>5. What is a queue?</h3>
+  <p>
+    A queue follows FIFO (First In, First Out), where the first
+    inserted element is removed first.
+  </p>
+
+  <h3>6. What is a linked list?</h3>
+  <p>
+    A linked list is a collection of nodes where each node stores
+    data and a link to another node.
+  </p>
+
+  <h3>7. What is a tree?</h3>
+  <p>
+    A tree is a non-linear hierarchical data structure consisting
+    of nodes and edges.
+  </p>
+
+  <h3>8. What is hashing?</h3>
+  <p>
+    Hashing converts a key into an index using a hash function to
+    enable fast data retrieval.
+  </p>
+
+  <h3>9. What is searching?</h3>
+  <p>
+    Searching is the process of finding a particular element in
+    a collection of data.
+  </p>
+
+  <h3>10. What is sorting?</h3>
+  <p>
+    Sorting arranges data in a specific order, such as ascending
+    or descending order.
+  </p>
+</section>
+
+
+<!-- FINAL NOTE -->
+<section class="card">
+  <h2>Conclusion</h2>
+
+  <p>
+    Data structures are an important part of computer science and
+    programming. Arrays, linked lists, stacks, queues, trees, heaps,
+    hashing and graphs help programmers organize data efficiently.
+  </p>
+
+  <p>
+    Understanding searching, sorting and algorithm complexity is also
+    essential for writing efficient programs and preparing for
+    technical interviews.
+  </p>
+
+  <p>
+    Start with simple structures such as arrays and linked lists,
+    then gradually learn stacks, queues, trees, heaps and graphs.
+  </p>
+</section>
+</main>
+
+<footer>
+  <p>© 2026 Learnix. Learn. Practice. Succeed.</p>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+</footer>
+
+</body>
+</html>
