@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Placement Preparation: Complete Guide | Learnix</title>
+
+  <meta
+    name="description"
+    content="Learn placement preparation with simple guides for aptitude, coding, communication, interviews, resumes and job preparation."
+  >
+
+  <meta
+    name="keywords"
+    content="placement preparation, aptitude, coding interview, technical interview, HR interview, resume preparation, job preparation"
+  >
+
+  <meta name="author" content="Learnix">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 8px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: #374151;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .page-container {
+      max-width: 1200px;
+      margin: 35px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+    }
+
+    .sidebar {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #374151;
+      text-decoration: none;
+      padding: 7px 0;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      color: #2563eb;
+    }
+
+    .content-section {
+      background: white;
+      padding: 28px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    .content-section h2 {
+      color: #111827;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .content-section h3 {
+      color: #2563eb;
+      margin-top: 22px;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .content-section p {
+      margin-bottom: 14px;
+    }
+
+    .content-section ul,
+    .content-section ol {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .content-section li {
+      margin-bottom: 7px;
+    }
+
+    .info-box {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 16px;
+      margin: 18px 0;
+      border-radius: 6px;
+    }
+
+    .code-box {
+      background: #111827;
+      color: #f9fafb;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+    }
+
+    th,
+    td {
+      border: 1px solid #d1d5db;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #e5e7eb;
+      font-weight: bold;
+    }
+
+    .faq {
+      margin-top: 15px;
+    }
+
+    .faq h3 {
+      color: #111827;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      padding: 35px 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: #dbeafe;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .page-container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .content-section {
+        padding: 20px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">Learnix</a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="java.html">Java</a>
+        <a href="dbms.html">DBMS</a>
+        <a href="data-structures.html">Data Structures</a>
+        <a href="digital-logic.html">Digital Logic</a>
+        <a href="placement.html">Placement</a>
+        <a href="resume.html">Resume</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <h1>Placement Preparation</h1>
+
+    <p>
+      Learn how to prepare for campus placements with aptitude,
+      coding, communication, technical interviews, HR interviews,
+      resume preparation and job preparation.
+    </p>
+
+  </section>
+
+
+  <!-- MAIN PAGE -->
+  <div class="page-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <h3>Placement Topics</h3>
+
+      <a href="#introduction">1. Introduction</a>
+      <a href="#placement-process">2. Placement Process</a>
+      <a href="#aptitude">3. Aptitude Preparation</a>
+      <a href="#reasoning">4. Logical Reasoning</a>
+      <a href="#verbal">5. Verbal Ability</a>
+      <a href="#coding">6. Coding Preparation</a>
+      <a href="#technical">7. Technical Interview</a>
+      <a href="#communication">8. Communication Skills</a>
+      <a href="#resume">9. Resume Preparation</a>
+      <a href="#hr-interview">10. HR Interview</a>
+      <a href="#mock-interview">11. Mock Interview</a>
+      <a href="#job-preparation">12. Job Preparation</a>
+      <a href="#common-mistakes">13. Common Mistakes</a>
+      <a href="#faq">14. FAQ</a>
+
+    </aside>
+
+
+    <!-- CONTENT -->
+    <main>
+
+
+      <!-- INTRODUCTION -->
+      <section class="content-section" id="introduction">
+
+        <h2>1. Introduction to Placement Preparation</h2>
+
+        <p>
+          Placement preparation is the process of developing the
+          knowledge, technical skills and communication skills required
+          to obtain a job after completing college.
+        </p>
+
+        <p>
+          Students generally prepare for aptitude tests, coding rounds,
+          technical interviews, communication rounds and HR interviews.
+          A good preparation strategy helps students perform confidently
+          throughout the recruitment process.
+        </p>
+
+        <div class="info-box">
+          <strong>Tip:</strong>
+          Start placement preparation early instead of waiting until
+          the final semester.
+        </div>
+
+        <h3>Important Areas</h3>
+
+        <ul>
+          <li>Aptitude and quantitative ability</li>
+          <li>Logical reasoning</li>
+          <li>Verbal ability</li>
+          <li>Programming and coding</li>
+          <li>Data structures and algorithms</li>
+          <li>Database management systems</li>
+          <li>Operating systems</li>
+          <li>Computer networks</li>
+          <li>Communication skills</li>
+          <li>Resume preparation</li>
+          <li>Technical interviews</li>
+          <li>HR interviews</li>
+        </ul>
+
+      </section>
+
+
+      <!-- PLACEMENT PROCESS -->
+      <section class="content-section" id="placement-process">
+
+        <h2>2. Placement Process</h2>
+
+        <p>
+          Most campus recruitment processes contain several rounds.
+          The exact process depends on the company and job role.
+        </p>
+
+        <table>
+
+          <tr>
+            <th>Round</th>
+            <th>What is Tested?</th>
+          </tr>
+
+          <tr>
+            <td>Aptitude Test</td>
+            <td>Mathematics, reasoning and verbal ability</td>
+          </tr>
+
+          <tr>
+            <td>Coding Test</td>
+            <td>Programming and problem-solving</td>
+          </tr>
+
+          <tr>
+            <td>Technical Interview</td>
+            <td>Computer science and technical knowledge</td>
+          </tr>
+
+          <tr>
+            <td>Communication Round</td>
+            <td>English and communication skills</td>
+          </tr>
+
+          <tr>
+            <td>HR Interview</td>
+            <td>Personality, attitude and career interests</td>
+          </tr>
+
+        </table>
+
+        <h3>Typical Process</h3>
+
+        <div class="code-box">Aptitude Test
+       ↓
+Coding Test
+       ↓
+Technical Interview
+       ↓
+HR Interview
+       ↓
+Job Offer</div>
+
+      </section>
+
+
+      <!-- APTITUDE -->
+      <section class="content-section" id="aptitude">
+
+        <h2>3. Aptitude Preparation</h2>
+
+        <p>
+          Aptitude tests are commonly used during the initial stage of
+          recruitment. They check mathematical ability and problem-solving
+          skills.
+        </p>
+
+        <h3>Important Aptitude Topics</h3>
+
+        <ul>
+          <li>Percentages</li>
+          <li>Profit and Loss</li>
+          <li>Simple Interest</li>
+          <li>Compound Interest</li>
+          <li>Time and Work</li>
+          <li>Time, Speed and Distance</li>
+          <li>Ratio and Proportion</li>
+          <li>Averages</li>
+          <li>Number Systems</li>
+          <li>Probability</li>
+          <li>Permutations and Combinations</li>
+          <li>Data Interpretation</li>
+        </ul>
+
+        <h3>Example</h3>
+
+        <p>
+          If a product costs ₹500 and its price increases by 10%, the
+          new price is:
+        </p>
+
+        <div class="code-box">Increase = 10% of 500
+        = (10 / 100) × 500
+        = 50
+
+New Price = 500 + 50
+         = ₹550</div>
+
+        <div class="info-box">
+          <strong>Practice Tip:</strong>
+          Solve problems regularly and use a timer to improve speed.
+        </div>
+
+      </section>
+
+
+      <!-- REASONING -->
+      <section class="content-section" id="reasoning">
+
+        <h2>4. Logical Reasoning</h2>
+
+        <p>
+          Logical reasoning tests the ability to analyze information,
+          identify patterns and solve problems logically.
+        </p>
+
+        <h3>Important Topics</h3>
+
+        <ul>
+          <li>Number series</li>
+          <li>Alphabet series</li>
+          <li>Coding and decoding</li>
+          <li>Blood relations</li>
+          <li>Directions</li>
+          <li>Seating arrangement</li>
+          <li>Logical puzzles</li>
+          <li>Syllogisms</li>
+          <li>Odd one out</li>
+          <li>Data sufficiency</li>
+        </ul>
+
+        <h3>Preparation Strategy</h3>
+
+        <ol>
+          <li>Understand the question carefully.</li>
+          <li>Identify the given information.</li>
+          <li>Look for patterns.</li>
+          <li>Eliminate incorrect options.</li>
+          <li>Practice different types of problems.</li>
+        </ol>
+
+      </section>
+
+
+      <!-- VERBAL -->
+      <section class="content-section" id="verbal">
+
+        <h2>5. Verbal Ability</h2>
+
+        <p>
+          Verbal ability measures a candidate's understanding and use
+          of the English language.
+        </p>
+
+        <h3>Important Topics</h3>
+
+        <ul>
+          <li>Grammar</li>
+          <li>Vocabulary</li>
+          <li>Synonyms and antonyms</li>
+          <li>Sentence correction</li>
+          <li>Reading comprehension</li>
+          <li>Fill in the blanks</li>
+          <li>Para jumbles</li>
+          <li>Sentence completion</li>
+        </ul>
+
+        <h3>How to Improve English</h3>
+
+        <ul>
+          <li>Read English articles regularly.</li>
+          <li>Learn a few new words every day.</li>
+          <li>Practice speaking in English.</li>
+          <li>Watch English educational videos.</li>
+          <li>Practice grammar questions.</li>
+        </ul>
+
+      </section>
+
+
+      <!-- CODING -->
+      <section class="content-section" id="coding">
+
+        <h2>6. Coding Preparation</h2>
+
+        <p>
+          Coding tests are used by many companies to evaluate
+          programming knowledge and problem-solving ability.
+        </p>
+
+        <h3>Recommended Programming Topics</h3>
+
+        <ul>
+          <li>Variables and data types</li>
+          <li>Operators</li>
+          <li>Conditional statements</li>
+          <li>Loops</li>
+          <li>Arrays</li>
+          <li>Strings</li>
+          <li>Functions and methods</li>
+          <li>Object-oriented programming</li>
+          <li>Recursion</li>
+          <li>Data structures</li>
+          <li>Algorithms</li>
+        </ul>
+
+        <h3>Simple Java Example</h3>
+
+        <div class="code-box">class Main {
+
+    public static void main(String[] args) {
+
+        int a = 10;
+        int b = 20;
+
+        int sum = a + b;
+
+        System.out.println("Sum = " + sum);
+    }
+}</div>
+
+        <h3>Important Coding Problems</h3>
+
+        <ul>
+          <li>Reverse a number</li>
+          <li>Check palindrome</li>
+          <li>Check prime number</li>
+          <li>Find factorial</li>
+          <li>Fibonacci series</li>
+          <li>Find largest element in an array</li>
+          <li>Sort an array</li>
+          <li>Count vowels in a string</li>
+          <li>Reverse a string</li>
+          <li>Remove duplicate elements</li>
+        </ul>
+
+      </section>
+
+
+      <!-- TECHNICAL -->
+      <section class="content-section" id="technical">
+
+        <h2>7. Technical Interview Preparation</h2>
+
+        <p>
+          A technical interview checks whether the candidate understands
+          the fundamentals related to their degree and job role.
+        </p>
+
+        <h3>Important Computer Science Subjects</h3>
+
+        <ul>
+          <li>Programming languages</li>
+          <li>Object-Oriented Programming</li>
+          <li>Data Structures</li>
+          <li>Algorithms</li>
+          <li>DBMS</li>
+          <li>SQL</li>
+          <li>Operating Systems</li>
+          <li>Computer Networks</li>
+          <li>Software Engineering</li>
+        </ul>
+
+        <h3>Common Technical Questions</h3>
+
+        <ol>
+          <li>What is Object-Oriented Programming?</li>
+          <li>What is inheritance?</li>
+          <li>What is polymorphism?</li>
+          <li>What is an interface in Java?</li>
+          <li>What is a database?</li>
+          <li>What is normalization?</li>
+          <li>What is a primary key?</li>
+          <li>What is a data structure?</li>
+          <li>What is an array?</li>
+          <li>What is the difference between stack and queue?</li>
+        </ol>
+
+        <div class="info-box">
+          <strong>Important:</strong>
+          Do not memorize only definitions. Try to understand concepts
+          and practice explaining them with simple examples.
+        </div>
+
+      </section>
+
+
+      <!-- COMMUNICATION -->
+      <section class="content-section" id="communication">
+
+        <h2>8. Communication Skills</h2>
+
+        <p>
+          Good communication helps candidates express their knowledge
+          clearly during interviews and group discussions.
+        </p>
+
+        <h3>Ways to Improve Communication</h3>
+
+        <ul>
+          <li>Speak English regularly.</li>
+          <li>Practice self-introduction.</li>
+          <li>Participate in group discussions.</li>
+          <li>Read articles and news.</li>
+          <li>Practice interview questions.</li>
+          <li>Record yourself while speaking.</li>
+          <li>Work on pronunciation and vocabulary.</li>
+        </ul>
+
+        <h3>Simple Self-Introduction Structure</h3>
+
+        <div class="code-box">1. Greeting
+2. Name
+3. Education
+4. Technical skills
+5. Projects
+6. Hobbies
+7. Career interest
+8. Thank you</div>
+
+      </section>
+
+
+      <!-- RESUME -->
+      <section class="content-section" id="resume">
+
+        <h2>9. Resume Preparation</h2>
+
+        <p>
+          A resume gives recruiters a quick overview of a candidate's
+          education, skills, projects and achievements.
+        </p>
+
+        <h3>Important Resume Sections</h3>
+
+        <ol>
+          <li>Name and contact information</li>
+          <li>Career objective or summary</li>
+          <li>Education</li>
+          <li>Technical skills</li>
+          <li>Projects</li>
+          <li>Internships</li>
+          <li>Certifications</li>
+          <li>Achievements</li>
+          <li>Extra-curricular activities</li>
+        </ol>
+
+        <h3>Resume Tips</h3>
+
+        <ul>
+          <li>Keep the resume clear and easy to read.</li>
+          <li>Use accurate information.</li>
+          <li>Highlight relevant technical skills.</li>
+          <li>Describe projects clearly.</li>
+          <li>Check spelling and grammar.</li>
+          <li>Avoid unnecessary information.</li>
+          <li>Keep formatting consistent.</li>
+        </ul>
+
+        <div class="info-box">
+          <strong>Tip:</strong>
+          Create a resume that matches the job role you are applying for.
+        </div>
+
+      </section>
+
+
+      <!-- HR INTERVIEW -->
+      <section class="content-section" id="hr-interview">
+
+        <h2>10. HR Interview Preparation</h2>
+
+        <p>
+          The HR interview focuses on communication, personality,
+          attitude, career interests and how well a candidate fits
+          the organization.
+        </p>
+
+        <h3>Common HR Questions</h3>
+
+        <ol>
+          <li>Tell me about yourself.</li>
+          <li>What are your strengths?</li>
+          <li>What are your weaknesses?</li>
+          <li>Why should we hire you?</li>
+          <li>Why do you want to join our company?</li>
+          <li>Where do you see yourself in the future?</li>
+          <li>Tell me about your project.</li>
+          <li>Why did you choose Computer Science?</li>
+          <li>Are you comfortable working in a team?</li>
+          <li>Do you have any questions for us?</li>
+        </ol>
+
+        <h3>How to Answer</h3>
+
+        <ul>
+          <li>Speak clearly and confidently.</li>
+          <li>Give honest answers.</li>
+          <li>Keep answers relevant.</li>
+          <li>Use examples when possible.</li>
+          <li>Maintain professional body language.</li>
+        </ul>
+
+      </section>
+
+
+      <!-- MOCK INTERVIEW -->
+      <section class="content-section" id="mock-interview">
+
+        <h2>11. Mock Interview</h2>
+
+        <p>
+          A mock interview is a practice interview that helps students
+          become comfortable with the actual recruitment process.
+        </p>
+
+        <h3>Benefits</h3>
+
+        <ul>
+          <li>Improves confidence.</li>
+          <li>Reduces interview anxiety.</li>
+          <li>Improves communication.</li>
+          <li>Helps identify weak areas.</li>
+          <li>Improves answer structure.</li>
+          <li>Provides practice with common questions.</li>
+        </ul>
+
+        <h3>Practice Method</h3>
+
+        <ol>
+          <li>Select common interview questions.</li>
+          <li>Prepare short and clear answers.</li>
+          <li>Practice speaking aloud.</li>
+          <li>Record your answers.</li>
+          <li>Review your performance.</li>
+          <li>Improve weak areas.</li>
+        </ol>
+
+      </section>
+
+
+      <!-- JOB PREPARATION -->
+      <section class="content-section" id="job-preparation">
+
+        <h2>12. Job Preparation</h2>
+
+                <p>
+          Job preparation involves understanding the job role, researching
+          the company and developing the skills required for the position.
+          Students should carefully read the job description and prepare
+          according to the requirements of the company.
+        </p>
+
+        <h3>Before Applying for a Job</h3>
+
+        <ul>
+          <li>Read the job description carefully.</li>
+          <li>Check the required technical skills.</li>
+          <li>Prepare a suitable resume.</li>
+          <li>Learn about the company.</li>
+          <li>Practice relevant coding problems.</li>
+          <li>Revise important technical subjects.</li>
+          <li>Improve communication skills.</li>
+        </ul>
+
+        <h3>Company Research</h3>
+
+        <p>
+          Before attending an interview, students should learn about the
+          company's products, services, work culture and the responsibilities
+          of the job role. This preparation helps candidates answer interview
+          questions more confidently.
+        </p>
+
+        <h3>Important Skills for Software Jobs</h3>
+
+        <ul>
+          <li>Programming fundamentals</li>
+          <li>Data structures and algorithms</li>
+          <li>Database and SQL knowledge</li>
+          <li>Object-oriented programming</li>
+          <li>Problem-solving skills</li>
+          <li>Communication skills</li>
+          <li>Teamwork</li>
+          <li>Time management</li>
+        </ul>
+
+        <div class="info-box">
+          <strong>Tip:</strong>
+          Apply for jobs that match your skills and carefully follow the
+          application instructions provided by the company.
+        </div>
+
+      </section>
+
+
+      <!-- COMMON MISTAKES -->
+      <section class="content-section" id="common-mistakes">
+
+        <h2>13. Common Placement Mistakes</h2>
+
+        <p>
+          Avoiding common mistakes can improve your performance during
+          placement tests and interviews.
+        </p>
+
+        <h3>Common Mistakes</h3>
+
+        <ul>
+          <li>Starting placement preparation too late.</li>
+          <li>Ignoring communication skills.</li>
+          <li>Not practicing coding regularly.</li>
+          <li>Memorizing concepts without understanding them.</li>
+          <li>Using an unorganized resume.</li>
+          <li>Not researching the company before an interview.</li>
+          <li>Giving very long answers during interviews.</li>
+          <li>Not practicing mock interviews.</li>
+          <li>Providing incorrect information on the resume.</li>
+          <li>Not managing time properly during tests.</li>
+        </ul>
+
+      </section>
+
+
+      <!-- DAILY STUDY PLAN -->
+      <section class="content-section">
+
+        <h2>Daily Placement Preparation Plan</h2>
+
+        <p>
+          A simple daily routine can help students prepare consistently
+          for placement examinations and interviews.
+        </p>
+
+        <table>
+
+          <tr>
+            <th>Activity</th>
+            <th>Suggested Time</th>
+          </tr>
+
+          <tr>
+            <td>Aptitude</td>
+            <td>30 minutes</td>
+          </tr>
+
+          <tr>
+            <td>Logical Reasoning</td>
+            <td>30 minutes</td>
+          </tr>
+
+          <tr>
+            <td>Coding</td>
+            <td>60 minutes</td>
+          </tr>
+
+          <tr>
+            <td>Technical Subjects</td>
+            <td>60 minutes</td>
+          </tr>
+
+          <tr>
+            <td>Communication</td>
+            <td>30 minutes</td>
+          </tr>
+
+          <tr>
+            <td>Interview Practice</td>
+            <td>30 minutes</td>
+          </tr>
+
+        </table>
+
+        <div class="info-box">
+
+          <strong>Remember:</strong>
+          Consistent daily practice is more useful than studying
+          everything at the last minute.
+
+        </div>
+
+      </section>
+
+
+      <!-- FAQ -->
+      <section class="content-section" id="faq">
+
+        <h2>14. Frequently Asked Questions</h2>
+
+        <div class="faq">
+
+          <h3>1. When should I start placement preparation?</h3>
+
+          <p>
+            It is better to start early during college. Starting early
+            gives enough time to improve coding, aptitude, technical
+            knowledge and communication skills.
+          </p>
+
+
+          <h3>2. Is coding necessary for software jobs?</h3>
+
+          <p>
+            Many software roles require programming and problem-solving
+            skills. The exact coding requirements depend on the company
+            and job role.
+          </p>
+
+
+          <h3>3. Which programming language should I learn?</h3>
+
+          <p>
+            Choose one programming language and learn its fundamentals
+            properly. Java, Python and C++ are commonly used for
+            programming practice.
+          </p>
+
+
+          <h3>4. How can I improve my aptitude?</h3>
+
+          <p>
+            Learn the basic formulas, understand different problem types
+            and solve questions regularly with a time limit.
+          </p>
+
+
+          <h3>5. How can I improve my interview skills?</h3>
+
+          <p>
+            Practice common technical and HR questions, participate in
+            mock interviews and improve your communication skills.
+          </p>
+
+
+          <h3>6. How important is a resume?</h3>
+
+          <p>
+            A resume helps recruiters understand your education, skills,
+            projects and experience. It should be accurate, clear and
+            relevant to the position.
+          </p>
+
+
+          <h3>7. What should I do before a technical interview?</h3>
+
+          <p>
+            Revise programming, data structures, DBMS, SQL, operating
+            systems, computer networks and the technical subjects
+            relevant to the job.
+          </p>
+
+
+          <h3>8. How can I become confident in interviews?</h3>
+
+          <p>
+            Confidence improves through preparation and practice.
+            Practice speaking clearly, review common questions and
+            participate in mock interviews.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- CONCLUSION -->
+      <section class="content-section">
+
+        <h2>Conclusion</h2>
+
+        <p>
+          Placement preparation requires a combination of technical
+          knowledge, problem-solving ability, communication skills and
+          interview preparation.
+        </p>
+
+        <p>
+          Students can improve their placement performance by practicing
+          aptitude questions, learning programming, studying computer
+          science fundamentals, building useful projects and regularly
+          practicing interviews.
+        </p>
+
+        <div class="info-box">
+
+          <strong>Start small, practice consistently and keep improving.</strong>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>
+      © 2026 Learnix. Learn. Practice. Succeed.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+      <a href="java.html">Java</a>
+      <a href="dbms.html">DBMS</a>
+      <a href="data-structures.html">Data Structures</a>
+      <a href="digital-logic.html">Digital Logic</a>
+      <a href="placement.html">Placement</a>
+      <a href="resume.html">Resume</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
