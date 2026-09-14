@@ -33,20 +33,23 @@ document.addEventListener("DOMContentLoaded", function () {
 // ============================================================
 
 function setupNavigation() {
-
     const navToggle = document.getElementById("navToggle");
-    const navLinks = document.getElementById("navLinks");
+    const navLinks = document.getElementById("nav");
 
-    if (navToggle && navLinks) {
+    if (!navToggle || !navLinks) return;
 
-        navToggle.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
+    navToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+    });
+
+    const links = navLinks.querySelectorAll("a");
+
+    links.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("active");
         });
-
-    }
-
+    });
 }
-
 
 // ============================================================
 // THEME
