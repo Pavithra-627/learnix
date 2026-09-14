@@ -1108,8 +1108,13 @@ footer p {
   backdrop-filter: blur(7px);
 }
 
-.modal.show {
+.modal.show,
+.modal.active {
   display: flex;
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal-box {
