@@ -371,30 +371,67 @@ class Student {
 function openTutor() {
 
     showModal("🤖 Learning Tutor", `
+        <p>
+            Ask any study question and Learnix will explain it
+            in simple words.
+        </p>
 
-        <div class="tutor-box">
+        <input
+            id="tutorQuestion"
+            type="text"
+            placeholder="Example: Explain OOP in Java"
+            style="
+                width:100%;
+                padding:12px;
+                margin:10px 0;
+                border-radius:8px;
+                border:1px solid #ccc;
+                box-sizing:border-box;
+            "
+        >
 
-            <p><strong>Ask me a study question.</strong></p>
+        <button
+            class="primary"
+            onclick="askTutor()">
+            Ask Tutor →
+        </button>
 
-            <input
-                type="text"
-                id="tutorQuestion"
-                placeholder="Example: Explain linked list simply"
-                style="width:100%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #ccc;"
-            >
-
-            <button onclick="answerTutor()" class="primary-btn">
-                Explain
-            </button>
-
-            <div id="tutorAnswer" style="margin-top:20px;"></div>
-
+        <div
+            id="tutorAnswer"
+            style="
+                margin-top:15px;
+                line-height:1.6;
+            ">
         </div>
-
     `);
-
 }
+function askTutor() {
 
+    const input = document.getElementById("tutorQuestion");
+    const answer = document.getElementById("tutorAnswer");
+
+    if (!input || !input.value.trim()) {
+        showToast("Please enter a question.");
+        return;
+    }
+
+    const question = input.value.trim();
+
+    answer.innerHTML = `
+        <div class="info-box">
+            <strong>Learnix Tutor</strong>
+            <p>
+                Here's a simple explanation for:
+                <strong>${escapeHTML(question)}</strong>
+            </p>
+
+            <p>
+                Learn this topic step by step using simple concepts,
+                examples and practice questions.
+            </p>
+        </div>
+    `;
+}
 
 function answerTutor() {
 
