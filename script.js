@@ -178,7 +178,7 @@ function openFeature(feature) {
             openTutor();
             break;
 
-        case "PDF Notes":
+        case "PDF → Notes":
             openPDFNotes();
             break;
 
@@ -2038,7 +2038,7 @@ if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
 
         navigator.serviceWorker
-            .register("service-worker.js")
+            .register("service-worker.js?v=2")
             .then(function () {
 
                 console.log(
