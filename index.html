@@ -1,75 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="google-site-verification"
-    content="WgPR1cvTCyJCbK8T-wBXMrwiM_SQbF-NjsoAGwTWQj8">
-
   <meta name="description"
-    content="Learnix provides free study resources, coding practice, communication practice, interview preparation, and career guidance for students.">
+    content="Learnix is a free student learning platform with study resources, quizzes, coding practice, communication practice, interview preparation and career guidance.">
 
   <meta name="keywords"
-    content="free student learning platform, study resources, coding practice, interview preparation, career guidance, Learnix">
+    content="student learning, Java, DBMS, data structures, digital logic, coding practice, quizzes, placement preparation, resume">
 
   <meta name="author" content="Learnix">
 
+  <meta name="google-site-verification"
+    content="WgPR1cvTCyJCbK8T-wBXMrwiM_SQbF-NjsoAGwTWQj8">
+
   <meta name="theme-color" content="#6d5dfc">
 
-  <title>Learnix — Free Learning Platform for Students</title>
-
   <link rel="manifest" href="manifest.json">
-
   <link rel="stylesheet" href="style.css">
+
+  <title>Learnix — Free Student Learning Platform</title>
 
   <!-- Google AdSense -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1320658299938024"
     crossorigin="anonymous"></script>
-
-  <!-- Service Worker -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("service-worker.js")
-          .catch(function (error) {
-            console.log("Service Worker registration failed:", error);
-          });
-      });
-    }
-  </script>
-
 </head>
 
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================== -->
+<!-- ================= NAVBAR ================= -->
 
-  <header class="navbar">
+<header class="navbar">
 
-    <a class="brand" href="#home">
-      <span class="logo">L</span>
-      <span>Learnix</span>
-    </a>
+  <a href="#home" class="brand">
+    <span class="logo">L</span>
+    <span>Learnix</span>
+  </a>
 
-    <nav id="nav">
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#study">Study</a>
+    <a href="#skills">Skills</a>
+    <a href="#resources">Resources</a>
+    <a href="#career">Career</a>
+  </nav>
 
-      <a href="#home">Home</a>
+  <div class="nav-actions">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Change theme">
+      🌙
+    </button>
 
-      <a href="#study">Study</a>
-
-      <a href="#skills">Skills</a>
-
-      <a href="#resources">Resources</a>
-
-      <a href="#career">Career</a>
-
-    </nav>
+    <button class="login-btn" onclick="openModal()">
+      Get Started
+    </button>
 
     <button
       class="nav-toggle"
@@ -77,885 +63,1012 @@
       aria-label="Open menu">
       ☰
     </button>
+  </div>
 
-    <button
-      class="login-btn"
-      onclick="openModal()">
-      Get Started
-    </button>
+</header>
 
-  </header>
 
+<!-- ================= MAIN ================= -->
 
-  <main>
+<main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+<!-- ================= HERO ================= -->
 
-    <section id="home" class="hero">
+<section id="home" class="hero">
 
-      <div class="hero-content">
+  <div class="hero-content">
 
-        <div class="badge">
-          ✨ Your Free Student Learning Companion
-        </div>
+    <div class="badge">
+      ✨ Your Free Student Learning Companion
+    </div>
 
-        <h1>
-          Learn smarter.<br>
-          <span>Build your future.</span>
-        </h1>
+    <h1>
+      Learn smarter.<br>
+      <span>Build your future.</span>
+    </h1>
 
-        <p>
-          Learnix is a free student learning platform with
-          study resources, coding practice, communication
-          practice, interview preparation, and career guidance.
-        </p>
+    <p>
+      Learnix is a free student learning platform with study resources,
+      coding practice, quizzes, communication practice, interview
+      preparation and career guidance.
+    </p>
 
-        <div class="hero-actions">
-
-          <button
-            class="primary"
-            onclick="scrollToSection('study')">
-            Start Learning →
-          </button>
-
-          <button
-            class="secondary"
-            onclick="openTutor()">
-            Try Learning Tutor
-          </button>
-
-        </div>
-
-        <div class="mini-stats">
-
-          <div>
-            <b>3</b>
-            <span>Learning paths</span>
-          </div>
-
-          <div>
-            <b>10+</b>
-            <span>Free learning tools</span>
-          </div>
-
-          <div>
-            <b>24/7</b>
-            <span>Learn at your pace</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- Dashboard Card -->
-
-      <div class="hero-card">
-
-        <div class="dashboard-top">
-
-          <span>Learnix Dashboard</span>
-
-          <span class="online">
-            ● Online
-          </span>
-
-        </div>
-
-
-        <div class="progress-box">
-
-          <div class="progress-ring">
-            72%
-          </div>
-
-          <div>
-
-            <b>Your progress</b>
-
-            <p>
-              Keep your learning streak going 🔥
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="quick-grid">
-
-          <button onclick="openTutor()">
-            🤖
-            <span>Learning Tutor</span>
-          </button>
-
-          <button onclick="openFeature('PDF → Notes')">
-            📄
-            <span>PDF Notes</span>
-          </button>
-
-          <button onclick="openFeature('MCQ Generator')">
-            📝
-            <span>MCQs</span>
-          </button>
-
-          <button onclick="openFeature('Mock Interview')">
-            🎤
-            <span>Interview</span>
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         INTRO
-    ========================== -->
-
-    <section class="section intro">
-
-      <div class="section-heading">
-
-        <span class="eyebrow">
-          Everything in one place
-        </span>
-
-        <h2>
-          Designed for your student journey
-        </h2>
-
-        <p>
-          From exam preparation to your first job interview,
-          Learnix helps students learn, practice and prepare.
-        </p>
-
-      </div>
-
-
-      <div class="three-cards">
-
-        <article class="category study">
-
-          <div class="icon">
-            📚
-          </div>
-
-          <h3>
-            Study
-          </h3>
-
-          <p>
-            Understand subjects faster and prepare
-            confidently for exams.
-          </p>
-
-          <button onclick="scrollToSection('study')">
-            Explore Study →
-          </button>
-
-        </article>
-
-
-        <article class="category skills">
-
-          <div class="icon">
-            💻
-          </div>
-
-          <h3>
-            Skills
-          </h3>
-
-          <p>
-            Practice coding, English speaking,
-            and communication skills.
-          </p>
-
-          <button onclick="scrollToSection('skills')">
-            Build Skills →
-          </button>
-
-        </article>
-
-
-        <article class="category career">
-
-          <div class="icon">
-            💼
-          </div>
-
-          <h3>
-            Career
-          </h3>
-
-          <p>
-            Build your resume and practice
-            for real-world interviews.
-          </p>
-
-          <button onclick="scrollToSection('career')">
-            Prepare for Career →
-          </button>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         STUDY
-    ========================== -->
-
-    <section
-      id="study"
-      class="section feature-section">
-
-      <div class="section-heading left">
-
-        <span class="eyebrow">
-          📚 Study
-        </span>
-
-        <h2>
-          Make studying easier
-        </h2>
-
-        <p>
-          Free tools to help students understand,
-          practice and revise academic topics.
-        </p>
-
-      </div>
-
-
-      <div class="feature-grid">
-
-
-        <article class="feature">
-
-          <span>📄</span>
-
-          <h3>
-            PDF → Notes
-          </h3>
-
-          <p>
-            Upload study material and create
-            simple revision notes.
-          </p>
-
-          <button onclick="openFeature('PDF → Notes')">
-            Try it
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>🤖</span>
-
-          <h3>
-            Learning Tutor
-          </h3>
-
-          <p>
-            Ask questions and learn concepts
-            using simple explanations.
-          </p>
-
-          <button onclick="openTutor()">
-            Learn
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>📝</span>
-
-          <h3>
-            MCQ Generator
-          </h3>
-
-          <p>
-            Create practice questions for
-            your chosen study topic.
-          </p>
-
-          <button onclick="openFeature('MCQ Generator')">
-            Generate
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>✍️</span>
-
-          <h3>
-            Exam Answers
-          </h3>
-
-          <p>
-            Practice writing structured answers
-            for academic questions.
-          </p>
-
-          <button onclick="openFeature('Exam Answers')">
-            Open
-          </button>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         SKILLS
-    ========================== -->
-
-    <section
-      id="skills"
-      class="section dark-section">
-
-      <div class="section-heading">
-
-        <span class="eyebrow">
-          💻 Skills
-        </span>
-
-        <h2>
-          Skills that move you forward
-        </h2>
-
-        <p>
-          Build practical confidence beyond
-          your classroom.
-        </p>
-
-      </div>
-
-
-      <div class="feature-grid">
-
-
-        <article class="feature dark-card">
-
-          <span>👨‍💻</span>
-
-          <h3>
-            Coding Practice
-          </h3>
-
-          <p>
-            Practice programming concepts
-            and problem solving.
-          </p>
-
-          <button onclick="openFeature('Coding Practice')">
-            Practice
-          </button>
-
-        </article>
-
-
-        <article class="feature dark-card">
-
-          <span>🗣️</span>
-
-          <h3>
-            English Speaking
-          </h3>
-
-          <p>
-            Improve vocabulary, fluency and
-            everyday speaking confidence.
-          </p>
-
-          <button onclick="openFeature('English Speaking')">
-            Practice
-          </button>
-
-        </article>
-
-
-        <article class="feature dark-card">
-
-          <span>🎤</span>
-
-          <h3>
-            Communication
-          </h3>
-
-          <p>
-            Practice presentations, seminars
-            and professional conversations.
-          </p>
-
-          <button onclick="openFeature('Communication')">
-            Improve
-          </button>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         FREE RESOURCES
-    ========================== -->
-
-    <section
-      id="resources"
-      class="section feature-section">
-
-      <div class="section-heading">
-
-        <span class="eyebrow">
-          📖 Free Resources
-        </span>
-
-        <h2>
-          Learn useful topics for free
-        </h2>
-
-        <p>
-          Explore simple study resources designed
-          for students and beginners.
-        </p>
-
-      </div>
-
-
-      <div class="feature-grid">
-
-
-        <article class="feature">
-
-          <span>☕</span>
-
-          <h3>
-            Java Basics
-          </h3>
-
-          <p>
-            Learn Java classes, objects, inheritance,
-            interfaces and exception handling.
-          </p>
-
-          <button onclick="openFeature('Java Guide')">
-            Learn Java
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>🗄️</span>
-
-          <h3>
-            DBMS Basics
-          </h3>
-
-          <p>
-            Learn databases, SQL, keys,
-            relationships and normalization.
-          </p>
-
-          <button onclick="openFeature('DBMS Guide')">
-            Learn DBMS
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>🌳</span>
-
-          <h3>
-            Data Structures
-          </h3>
-
-          <p>
-            Learn arrays, linked lists, stacks,
-            queues, trees and hashing.
-          </p>
-
-          <button onclick="openFeature('DSA Guide')">
-            Learn DSA
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>🔢</span>
-
-          <h3>
-            Digital Logic
-          </h3>
-
-          <p>
-            Practice Boolean algebra, logic gates,
-            K-maps and digital circuits.
-          </p>
-
-          <button onclick="openFeature('Digital Logic Guide')">
-            Learn Digital Logic
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>🎯</span>
-
-          <h3>
-            Placement Preparation
-          </h3>
-
-          <p>
-            Prepare for aptitude tests,
-            coding rounds and interviews.
-          </p>
-
-          <button onclick="openFeature('Placement Guide')">
-            Prepare
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>📄</span>
-
-          <h3>
-            Resume Preparation
-          </h3>
-
-          <p>
-            Learn how students can create
-            a clear and professional resume.
-          </p>
-
-          <button onclick="openFeature('Resume Guide')">
-            Learn Resume
-          </button>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CAREER
-    ========================== -->
-
-    <section
-      id="career"
-      class="section feature-section">
-
-      <div class="section-heading left">
-
-        <span class="eyebrow">
-          💼 Career
-        </span>
-
-        <h2>
-          Get ready for your next opportunity
-        </h2>
-
-        <p>
-          Build your professional profile and
-          practice before the real interview.
-        </p>
-
-      </div>
-
-
-      <div class="feature-grid">
-
-
-        <article class="feature">
-
-          <span>📄</span>
-
-          <h3>
-            Resume Builder
-          </h3>
-
-          <p>
-            Create a clean and professional
-            student resume.
-          </p>
-
-          <button onclick="openFeature('Resume Builder')">
-            Build Resume
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>🎙️</span>
-
-          <h3>
-            Mock Interview
-          </h3>
-
-          <p>
-            Practice common HR and technical
-            interview questions.
-          </p>
-
-          <button onclick="openFeature('Mock Interview')">
-            Start Interview
-          </button>
-
-        </article>
-
-
-        <article class="feature">
-
-          <span>🚀</span>
-
-          <h3>
-            Job Preparation
-          </h3>
-
-          <p>
-            Follow a practical preparation
-            checklist for your target role.
-          </p>
-
-          <button onclick="openFeature('Job Preparation')">
-            Start Preparing
-          </button>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         ABOUT LEARNIX
-    ========================== -->
-
-    <section class="section intro">
-
-      <div class="section-heading">
-
-        <span class="eyebrow">
-          About Learnix
-        </span>
-
-        <h2>
-          A simple platform for student growth
-        </h2>
-
-        <p>
-          Learnix is designed to bring learning,
-          skill practice and career preparation
-          together in one easy-to-use website.
-        </p>
-
-        <p>
-          Students can use Learnix to revise
-          academic concepts, practice programming,
-          improve communication, prepare resumes
-          and develop interview confidence.
-        </p>
-
-        <p>
-          Our aim is to make useful learning
-          resources easier to access, especially
-          for students who are beginning their
-          academic and professional journey.
-        </p>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CTA
-    ========================== -->
-
-    <section class="cta">
-
-      <div>
-
-        <span class="eyebrow">
-          Your next step starts here
-        </span>
-
-        <h2>
-          Ready to learn, practice and succeed?
-        </h2>
-
-        <p>
-          Explore Learnix and start learning for free.
-        </p>
-
-      </div>
+    <div class="hero-actions">
 
       <button
-        class="primary light"
-        onclick="openModal()">
+        class="primary"
+        onclick="scrollToSection('study')">
         Start Learning →
       </button>
 
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    <div>
-
-      <a class="brand" href="#home">
-
-        <span class="logo">
-          L
-        </span>
-
-        <span>
-          Learnix
-        </span>
-
-      </a>
-
-      <p>
-        Learn. Practice. Succeed.
-      </p>
-
-      <p>
-        Free learning resources for students.
-      </p>
-
-    </div>
-
-
-    <div class="footer-links">
-
-      <a href="#home">
-        Home
-      </a>
-
-      <a href="#study">
-        Study
-      </a>
-
-      <a href="#skills">
-        Skills
-      </a>
-
-      <a href="#resources">
-        Resources
-      </a>
-
-      <a href="#career">
-        Career
-      </a>
-
-    </div>
-
-
-    <p class="copyright">
-      © 2026 Learnix. Built for students.
-    </p>
-
-  </footer>
-
-
-  <!-- =========================
-       MAIN MODAL
-  ========================== -->
-
-  <div
-    class="modal"
-    id="modal"
-    aria-hidden="true">
-
-    <div class="modal-box">
-
       <button
-        class="close"
-        onclick="closeModal()">
-        ×
+        class="secondary"
+        onclick="openTutor()">
+        Try Learning Tutor
       </button>
 
-      <div class="modal-icon">
-        ✨
+    </div>
+
+    <div class="mini-stats">
+
+      <div>
+        <b>3</b>
+        <span>Learning paths</span>
       </div>
 
-      <h2 id="modalTitle">
-        Welcome to Learnix
-      </h2>
+      <div>
+        <b>10+</b>
+        <span>Free learning tools</span>
+      </div>
 
-      <p id="modalText">
-        Create your student profile to start
-        exploring Learnix.
-      </p>
-
-      <input
-        id="nameInput"
-        type="text"
-        placeholder="Enter your name">
-
-      <button
-        class="primary full"
-        onclick="continueAction()">
-        Continue →
-      </button>
-
-      <small>
-        Your name is stored only in your browser.
-      </small>
+      <div>
+        <b>24/7</b>
+        <span>Learn at your pace</span>
+      </div>
 
     </div>
 
   </div>
 
 
-  <!-- MAIN JAVASCRIPT -->
+  <!-- DASHBOARD CARD -->
 
-  <script src="script.js"></script>
+  <div class="hero-card">
+
+    <div class="dashboard-top">
+      <span>Learnix Dashboard</span>
+      <span class="online">● Online</span>
+    </div>
+
+    <div class="progress-box">
+
+      <div class="progress-ring">
+        <span id="heroProgress">0%</span>
+      </div>
+
+      <div>
+        <b>Your progress</b>
+        <p>Keep your learning streak going 🔥</p>
+      </div>
+
+    </div>
+
+    <div class="quick-grid">
+
+      <button onclick="openTutor()">
+        🤖
+        <span>Learning Tutor</span>
+      </button>
+
+      <button onclick="openFeature('PDF → Notes')">
+        📄
+        <span>PDF Notes</span>
+      </button>
+
+      <button onclick="openFeature('MCQ Generator')">
+        📝
+        <span>MCQs</span>
+      </button>
+
+      <button onclick="openFeature('Mock Interview')">
+        🎤
+        <span>Interview</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= OVERVIEW ================= -->
+
+<section class="section intro">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      Everything in one place
+    </span>
+
+    <h2>
+      Designed for your student journey
+    </h2>
+
+    <p>
+      From exam preparation to your first job interview,
+      Learnix helps students learn, practice and prepare.
+    </p>
+
+  </div>
+
+
+  <div class="three-cards">
+
+    <article class="category study">
+
+      <div class="icon">📚</div>
+
+      <h3>Study</h3>
+
+      <p>
+        Understand subjects faster and prepare confidently
+        for exams.
+      </p>
+
+      <button onclick="scrollToSection('study')">
+        Explore Study →
+      </button>
+
+    </article>
+
+
+    <article class="category skills">
+
+      <div class="icon">💻</div>
+
+      <h3>Skills</h3>
+
+      <p>
+        Practice coding, English speaking and communication
+        skills.
+      </p>
+
+      <button onclick="scrollToSection('skills')">
+        Build Skills →
+      </button>
+
+    </article>
+
+
+    <article class="category career">
+
+      <div class="icon">💼</div>
+
+      <h3>Career</h3>
+
+      <p>
+        Build your resume and practice for real-world
+        interviews.
+      </p>
+
+      <button onclick="scrollToSection('career')">
+        Prepare for Career →
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= STUDY ================= -->
+
+<section id="study" class="section feature-section">
+
+  <div class="section-heading left">
+
+    <span class="eyebrow">
+      📚 Study
+    </span>
+
+    <h2>
+      Make studying easier
+    </h2>
+
+    <p>
+      Free tools to help students understand, practice
+      and revise academic topics.
+    </p>
+
+  </div>
+
+
+  <div class="feature-grid">
+
+    <article class="feature">
+
+      <span>📄</span>
+
+      <h3>
+        PDF → Notes
+      </h3>
+
+      <p>
+        Select study material and create simple revision notes.
+      </p>
+
+      <button onclick="openFeature('PDF → Notes')">
+        Try it
+      </button>
+
+    </article>
+
+
+    <article class="feature">
+
+      <span>🤖</span>
+
+      <h3>
+        Learning Tutor
+      </h3>
+
+      <p>
+        Ask questions and learn concepts using simple explanations.
+      </p>
+
+      <button onclick="openTutor()">
+        Learn
+      </button>
+
+    </article>
+
+
+    <article class="feature">
+
+      <span>📝</span>
+
+      <h3>
+        MCQ Generator
+      </h3>
+
+      <p>
+        Create practice questions for your chosen study topic.
+      </p>
+
+      <button onclick="openFeature('MCQ Generator')">
+        Generate
+      </button>
+
+    </article>
+
+
+    <article class="feature">
+
+      <span>✍️</span>
+
+      <h3>
+        Exam Answers
+      </h3>
+
+      <p>
+        Practice writing structured answers for academic questions.
+      </p>
+
+      <button onclick="openFeature('Exam Answers')">
+        Open
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= RESOURCES ================= -->
+
+<section id="resources" class="section resources-section">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      📖 Free Resources
+    </span>
+
+    <h2>
+      Learn useful topics for free
+    </h2>
+
+    <p>
+      Explore simple study resources designed for students
+      and beginners.
+    </p>
+
+  </div>
+
+
+  <div class="resource-grid">
+
+
+    <!-- JAVA -->
+
+    <article class="resource-card">
+
+      <div class="resource-icon">
+        ☕
+      </div>
+
+      <h3>
+        Java Basics
+      </h3>
+
+      <p>
+        Learn Java classes, objects, constructors,
+        inheritance, interfaces and exception handling.
+      </p>
+
+      <button onclick="openFeature('Java Guide')">
+        Learn Java →
+      </button>
+
+    </article>
+
+
+    <!-- DBMS -->
+
+    <article class="resource-card">
+
+      <div class="resource-icon">
+        🗄️
+      </div>
+
+      <h3>
+        DBMS Basics
+      </h3>
+
+      <p>
+        Learn databases, SQL, keys, relationships,
+        ER diagrams and normalization.
+      </p>
+
+      <button onclick="openFeature('DBMS Guide')">
+        Learn DBMS →
+      </button>
+
+    </article>
+
+
+    <!-- DATA STRUCTURES -->
+
+    <article class="resource-card">
+
+      <div class="resource-icon">
+        🌳
+      </div>
+
+      <h3>
+        Data Structures
+      </h3>
+
+      <p>
+        Learn arrays, linked lists, stacks, queues,
+        trees and hashing.
+      </p>
+
+      <button onclick="openFeature('Data Structures Guide')">
+        Learn DSA →
+      </button>
+
+    </article>
+
+
+    <!-- DIGITAL LOGIC -->
+
+    <article class="resource-card">
+
+      <div class="resource-icon">
+        🔢
+      </div>
+
+      <h3>
+        Digital Logic
+      </h3>
+
+      <p>
+        Practice Boolean algebra, logic gates, K-maps
+        and digital circuits.
+      </p>
+
+      <button onclick="openFeature('Digital Logic Guide')">
+        Learn Digital Logic →
+      </button>
+
+    </article>
+
+
+    <!-- PLACEMENT -->
+
+    <article class="resource-card">
+
+      <div class="resource-icon">
+        🎯
+      </div>
+
+      <h3>
+        Placement Preparation
+      </h3>
+
+      <p>
+        Prepare for aptitude tests, coding rounds,
+        technical interviews and HR rounds.
+      </p>
+
+      <button onclick="openFeature('Placement Guide')">
+        Prepare →
+      </button>
+
+    </article>
+
+
+    <!-- RESUME -->
+
+    <article class="resource-card">
+
+      <div class="resource-icon">
+        📄
+      </div>
+
+      <h3>
+        Resume Preparation
+      </h3>
+
+      <p>
+        Learn how students can create a clear,
+        professional resume.
+      </p>
+
+      <button onclick="openFeature('Resume Guide')">
+        Learn Resume →
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section dark-section">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      💻 Skills
+    </span>
+
+    <h2>
+      Skills that move you forward
+    </h2>
+
+    <p>
+      Build practical confidence beyond your classroom.
+    </p>
+
+  </div>
+
+
+  <div class="feature-grid">
+
+    <article class="feature dark-card">
+
+      <span>👨‍💻</span>
+
+      <h3>
+        Coding Practice
+      </h3>
+
+      <p>
+        Practice programming concepts and problem solving.
+      </p>
+
+      <button onclick="openFeature('Coding Practice')">
+        Practice
+      </button>
+
+    </article>
+
+
+    <article class="feature dark-card">
+
+      <span>🗣️</span>
+
+      <h3>
+        English Speaking
+      </h3>
+
+      <p>
+        Improve vocabulary, fluency and everyday
+        speaking confidence.
+      </p>
+
+      <button onclick="openFeature('English Speaking')">
+        Practice
+      </button>
+
+    </article>
+
+
+    <article class="feature dark-card">
+
+      <span>🎤</span>
+
+      <h3>
+        Communication
+      </h3>
+
+      <p>
+        Practice presentations, seminars and professional
+        conversations.
+      </p>
+
+      <button onclick="openFeature('Communication')">
+        Improve
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ADVANCED TOOLS ================= -->
+
+<section id="tools" class="section">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      🛠️ Student Tools
+    </span>
+
+    <h2>
+      Tools for everyday learning
+    </h2>
+
+    <p>
+      Simple browser-based tools to help you organize
+      your study routine.
+    </p>
+
+  </div>
+
+
+  <div class="tool-grid">
+
+
+    <article class="tool-card">
+
+      <span>⏱️</span>
+
+      <h3>
+        Study Timer
+      </h3>
+
+      <p>
+        Focus on your studies with a simple timer.
+      </p>
+
+      <button onclick="openFeature('Study Timer')">
+        Start Timer
+      </button>
+
+    </article>
+
+
+    <article class="tool-card">
+
+      <span>✅</span>
+
+      <h3>
+        Study Planner
+      </h3>
+
+      <p>
+        Create a simple list of study tasks.
+      </p>
+
+      <button onclick="openFeature('Study Planner')">
+        Plan Study
+      </button>
+
+    </article>
+
+
+    <article class="tool-card">
+
+      <span>🔖</span>
+
+      <h3>
+        Bookmarks
+      </h3>
+
+      <p>
+        Save useful learning topics for later.
+      </p>
+
+      <button onclick="openFeature('Bookmarks')">
+        View Bookmarks
+      </button>
+
+    </article>
+
+
+    <article class="tool-card">
+
+      <span>🏆</span>
+
+      <h3>
+        Achievements
+      </h3>
+
+      <p>
+        Track your learning progress and milestones.
+      </p>
+
+      <button onclick="openFeature('Achievements')">
+        View Progress
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section id="quiz" class="section quiz-section">
+
+  <div class="section-heading">
+
+    <span class="eyebrow">
+      📝 Practice
+    </span>
+
+    <h2>
+      Test your knowledge
+    </h2>
+
+    <p>
+      Choose a subject and practice questions to improve
+      your understanding.
+    </p>
+
+  </div>
+
+
+  <div class="quiz-card">
+
+    <div class="quiz-info">
+
+      <span>🎯</span>
+
+      <div>
+
+        <h3>
+          Learnix Quiz Center
+        </h3>
+
+        <p>
+          Practice Java, DBMS, Data Structures and more.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <button
+      class="primary"
+      onclick="openFeature('MCQ Generator')">
+      Start Quiz →
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CAREER ================= -->
+
+<section id="career" class="section feature-section">
+
+  <div class="section-heading left">
+
+    <span class="eyebrow">
+      💼 Career
+    </span>
+
+    <h2>
+      Get ready for your next opportunity
+    </h2>
+
+    <p>
+      Build your professional profile and practice
+      before the real interview.
+    </p>
+
+  </div>
+
+
+  <div class="feature-grid">
+
+    <article class="feature">
+
+      <span>📄</span>
+
+      <h3>
+        Resume Builder
+      </h3>
+
+      <p>
+        Create a clean and professional student resume.
+      </p>
+
+      <button onclick="openFeature('Resume Builder')">
+        Build Resume
+      </button>
+
+    </article>
+
+
+    <article class="feature">
+
+      <span>🎙️</span>
+
+      <h3>
+        Mock Interview
+      </h3>
+
+      <p>
+        Practice common HR and technical interview questions.
+      </p>
+
+      <button onclick="openFeature('Mock Interview')">
+        Start Interview
+      </button>
+
+    </article>
+
+
+    <article class="feature">
+
+      <span>🚀</span>
+
+      <h3>
+        Job Preparation
+      </h3>
+
+      <p>
+        Follow a practical preparation checklist
+        for your target role.
+      </p>
+
+      <button onclick="openFeature('Job Preparation')">
+        Start Preparing
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section about-section">
+
+  <div class="about-content">
+
+    <span class="eyebrow">
+      About Learnix
+    </span>
+
+    <h2>
+      A simple platform for student growth
+    </h2>
+
+    <p>
+      Learnix is designed to bring learning, skill practice
+      and career preparation together in one easy-to-use website.
+    </p>
+
+    <p>
+      Students can use Learnix to revise academic concepts,
+      practice programming, improve communication, prepare
+      resumes and develop interview confidence.
+    </p>
+
+    <p>
+      Our aim is to make useful learning resources easier
+      to access, especially for students who are beginning
+      their academic and professional journey.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+  <div>
+
+    <span class="eyebrow">
+      Your next step starts here
+    </span>
+
+    <h2>
+      Ready to learn, practice and succeed?
+    </h2>
+
+    <p>
+      Explore Learnix and start learning for free.
+    </p>
+
+  </div>
+
+  <button
+    class="primary light"
+    onclick="scrollToSection('resources')">
+    Start Learning →
+  </button>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div>
+
+    <a href="#home" class="brand">
+
+      <span class="logo">
+        L
+      </span>
+
+      <span>
+        Learnix
+      </span>
+
+    </a>
+
+    <p>
+      Learn. Practice. Succeed.
+    </p>
+
+    <p>
+      Free learning resources for students.
+    </p>
+
+  </div>
+
+
+  <div class="footer-links">
+
+    <a href="#home">
+      Home
+    </a>
+
+    <a href="#study">
+      Study
+    </a>
+
+    <a href="#skills">
+      Skills
+    </a>
+
+    <a href="#resources">
+      Resources
+    </a>
+
+    <a href="#career">
+      Career
+    </a>
+
+    <a href="#about">
+      About
+    </a>
+
+  </div>
+
+
+  <p class="copyright">
+    © 2026 Learnix. Built for students.
+  </p>
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+<div
+  class="modal"
+  id="modal"
+  aria-hidden="true">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal()">
+      ×
+    </button>
+
+    <div class="modal-icon">
+      ✨
+    </div>
+
+    <h2 id="modalTitle">
+      Welcome to Learnix
+    </h2>
+
+    <p id="modalText">
+      Start exploring free learning resources.
+    </p>
+
+    <input
+      id="nameInput"
+      type="text"
+      placeholder="Enter your name"
+      maxlength="50">
+
+    <button
+      class="primary full"
+      onclick="continueAction()">
+      Continue →
+    </button>
+
+    <small>
+      Your name is stored only in your browser.
+    </small>
+
+  </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+
+<!-- ================= SERVICE WORKER ================= -->
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("service-worker.js")
+        .catch(function (error) {
+          console.log("Service Worker registration failed:", error);
+        });
+    });
+  }
+</script>
 
 </body>
-
 </html>
