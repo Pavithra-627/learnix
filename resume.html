@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Resume Preparation: Complete Guide | Learnix</title>
+
+  <meta
+    name="description"
+    content="Learn how to create a professional resume with simple guidance on resume sections, skills, projects, education, formatting and interview preparation."
+  >
+
+  <meta
+    name="keywords"
+    content="resume preparation, resume format, student resume, fresher resume, resume tips, job resume, professional resume"
+  >
+
+  <meta name="author" content="Learnix">
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+
+
+    /* HEADER */
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 8px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: #374151;
+    }
+
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+
+    /* PAGE LAYOUT */
+
+    .page-container {
+      max-width: 1200px;
+      margin: 35px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 30px;
+    }
+
+
+    /* SIDEBAR */
+
+    .sidebar {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 15px;
+      color: #111827;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #374151;
+      text-decoration: none;
+      padding: 7px 0;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      color: #2563eb;
+    }
+
+
+    /* CONTENT */
+
+    .content-section {
+      background: white;
+      padding: 28px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    .content-section h2 {
+      color: #111827;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .content-section h3 {
+      color: #2563eb;
+      margin-top: 22px;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .content-section p {
+      margin-bottom: 14px;
+    }
+
+    .content-section ul,
+    .content-section ol {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .content-section li {
+      margin-bottom: 7px;
+    }
+
+
+    /* INFO BOX */
+
+    .info-box {
+      background: #eff6ff;
+      border-left: 5px solid #2563eb;
+      padding: 16px;
+      margin: 18px 0;
+      border-radius: 6px;
+    }
+
+
+    /* CODE / EXAMPLE BOX */
+
+    .code-box {
+      background: #111827;
+      color: #f9fafb;
+      padding: 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+    }
+
+
+    /* TABLE */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+    }
+
+    th,
+    td {
+      border: 1px solid #d1d5db;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #e5e7eb;
+      font-weight: bold;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: #111827;
+      color: white;
+      padding: 35px 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .footer-links {
+      margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: #dbeafe;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .page-container {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .content-section {
+        padding: 20px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        Learnix
+      </a>
+
+      <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="java.html">Java</a>
+
+        <a href="dbms.html">DBMS</a>
+
+        <a href="data-structures.html">Data Structures</a>
+
+        <a href="digital-logic.html">Digital Logic</a>
+
+        <a href="placement.html">Placement</a>
+
+        <a href="resume.html">Resume</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>Resume Preparation</h1>
+
+    <p>
+      Learn how to create a clear, professional and
+      job-ready resume as a student or fresher.
+    </p>
+
+  </section>
+
+
+  <!-- PAGE CONTAINER -->
+
+  <div class="page-container">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+      <h3>Resume Topics</h3>
+
+      <a href="#introduction">1. Introduction</a>
+
+      <a href="#resume-importance">2. Importance of Resume</a>
+
+      <a href="#resume-structure">3. Resume Structure</a>
+
+      <a href="#contact-details">4. Contact Details</a>
+
+      <a href="#career-summary">5. Career Summary</a>
+
+      <a href="#education">6. Education</a>
+
+      <a href="#skills">7. Technical Skills</a>
+
+      <a href="#projects">8. Projects</a>
+
+      <a href="#experience">9. Experience</a>
+
+      <a href="#certifications">10. Certifications</a>
+
+      <a href="#achievements">11. Achievements</a>
+
+      <a href="#formatting">12. Resume Formatting</a>
+
+      <a href="#mistakes">13. Common Mistakes</a>
+
+      <a href="#ats">14. ATS-Friendly Resume</a>
+
+      <a href="#faq">15. FAQ</a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
