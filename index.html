@@ -102,9 +102,10 @@
       </button>
 
       <button
-        class="secondary"
-        onclick="openTutor()">
-        Try Learning Tutor
+    type="button"
+    class="secondary"
+    id="tutorButton">
+    Try Learning Tutor
       </button>
 
     </div>
@@ -1056,20 +1057,6 @@
 <!-- ================= JAVASCRIPT ================= -->
 
 <script src="script.js"></script>
-
-
-<!-- ================= SERVICE WORKER ================= -->
-
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      navigator.serviceWorker.register("service-worker.js")
-        .catch(function (error) {
-          console.log("Service Worker registration failed:", error);
-        });
-    });
-  }
-</script>
 
 </body>
 </html>
