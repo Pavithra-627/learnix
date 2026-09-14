@@ -1002,19 +1002,15 @@
   </p>
 
 </footer>
-
-
 <!-- ================= MODAL ================= -->
 
-<div
-  class="modal"
-  id="modal"
-  aria-hidden="true">
+<div class="modal" id="modal" aria-hidden="true">
 
   <div class="modal-box">
 
     <button
-      class="close"
+      class="close modal-close"
+      id="closeModal"
       onclick="closeModal()">
       ×
     </button>
@@ -1023,33 +1019,38 @@
       ✨
     </div>
 
-    <h2 id="modalTitle">
+    <h2 class="modal-title">
       Welcome to Learnix
     </h2>
 
-    <p id="modalText">
-      Start exploring free learning resources.
-    </p>
+    <div class="modal-body">
 
-    <input
-      id="nameInput"
-      type="text"
-      placeholder="Enter your name"
-      maxlength="50">
+      <p>
+        Start exploring free learning resources.
+      </p>
 
-    <button
-      class="primary full"
-      onclick="continueAction()">
-      Continue →
-    </button>
+      <input
+        id="nameInput"
+        type="text"
+        placeholder="Enter your name"
+        maxlength="50">
 
-    <small>
-      Your name is stored only in your browser.
-    </small>
+      <button
+        class="primary full"
+        onclick="continueAction()">
+        Continue →
+      </button>
+
+      <small>
+        Your name is stored only in your browser.
+      </small>
+
+    </div>
 
   </div>
 
 </div>
+
 
 
 <!-- ================= JAVASCRIPT ================= -->
