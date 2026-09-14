@@ -34,16 +34,30 @@
 <!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
-  <a
-  href="#home"
-  class="brand"
-  onclick="scrollToSection('home'); return false;"
-  style="cursor:pointer; pointer-events:auto;">
   
-  <span class="logo">L</span>
-  <span>Learnix</span>
+<a
+  href="index.html"
+  class="brand"
+  style="
+    position: relative;
+    z-index: 99999;
+    pointer-events: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  ">
+  <span
+    class="logo"
+    style="
+      position: relative;
+      z-index: 99999;
+      pointer-events: auto;
+    ">
+    L
+  </span>
 
-  </a>
+  <span>Learnix</span>
+</a>
 
   <nav id="nav">
     <a href="#home">Home</a>
@@ -1012,8 +1026,6 @@
   <a href="terms.html">
     Terms &amp; Conditions
   </a>
-
-  </div>
 
   </div>
 
