@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DBMS Basics: Complete Beginner's Guide | Learnix</title>
+
+  <meta name="description"
+        content="Learn DBMS basics with simple explanations of databases, tables, keys, SQL, normalization, relationships, and important DBMS concepts.">
+
+  <meta name="author" content="Learnix">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      background: #f6f8fb;
+      color: #222;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #222;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin: 0 8px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      padding: 60px 6%;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #eef2ff;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #555;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 25px;
+    }
+
+    .toc {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+    }
+
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      text-decoration: none;
+      color: #444;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    h3 {
+      margin-top: 25px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .highlight {
+      padding: 15px;
+      background: #f1f5f9;
+      border-left: 4px solid #555;
+      margin: 20px 0;
+    }
+
+    pre {
+      background: #1e1e1e;
+      color: #ffffff;
+      padding: 18px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+    }
+
+    details {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #444;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: static;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">📚 Learnix</a>
+
+    <div>
+      <a href="index.html">Home</a>
+      <a href="index.html#study">Study</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="index.html#career">Career</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="badge">🗄️ Learnix DBMS Guide</span>
+
+  <h1>DBMS Basics: A Complete Beginner's Guide</h1>
+
+  <p>
+    Learn database management system concepts with simple explanations,
+    examples, tables, SQL queries, keys, relationships and normalization.
+  </p>
+</section>
+
+<div class="container">
+
+  <aside class="toc">
+    <h3>Contents</h3>
+
+    <a href="#introduction">1. Introduction</a>
+    <a href="#database">2. Database</a>
+    <a href="#dbms">3. What is DBMS?</a>
+    <a href="#advantages">4. Advantages</a>
+    <a href="#models">5. Data Models</a>
+    <a href="#tables">6. Tables</a>
+    <a href="#keys">7. Keys</a>
+    <a href="#sql">8. SQL</a>
+    <a href="#crud">9. CRUD Operations</a>
+    <a href="#relationships">10. Relationships</a>
+    <a href="#normalization">11. Normalization</a>
+    <a href="#transactions">12. Transactions</a>
+    <a href="#acid">13. ACID Properties</a>
+    <a href="#faq">14. FAQ</a>
+  </aside>
+
+  <main>
+
+<section id="introduction" class="card">
+  <h2>1. Introduction to DBMS</h2>
+
+  <p>
+    DBMS stands for <strong>Database Management System</strong>.
+    It is software used to create, store, organize, retrieve and manage
+    data in a database.
+  </p>
+
+  <p>
+    DBMS provides an organized way to work with large amounts of data.
+    It also provides facilities for security, data consistency,
+    backup and controlled access.
+  </p>
+
+  <div class="highlight">
+    <strong>Simple definition:</strong>
+    A DBMS is software that helps users store and manage data efficiently.
+  </div>
+</section>
+
+
+<section id="database" class="card">
+  <h2>2. What is a Database?</h2>
+
+  <p>
+    A database is an organized collection of related data that can be
+    easily accessed, managed and updated.
+  </p>
+
+  <p>
+    For example, a college database may store student names, roll numbers,
+    departments, marks and attendance information.
+  </p>
+
+  <h3>Example Student Table</h3>
+
+  <table>
+    <tr>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Marks</th>
+    </tr>
+
+    <tr>
+      <td>101</td>
+      <td>Arun</td>
+      <td>CSE</td>
+      <td>85</td>
+    </tr>
+
+    <tr>
+      <td>102</td>
+      <td>Priya</td>
+      <td>ECE</td>
+      <td>90</td>
+    </tr>
+
+    <tr>
+      <td>103</td>
+      <td>Ravi</td>
+      <td>CSE</td>
+      <td>78</td>
+    </tr>
+  </table>
+</section>
+      <section id="dbms" class="card">
+  <h2>3. What is DBMS?</h2>
+
+  <p>
+    A Database Management System is a software system that allows users
+    and applications to interact with databases. It provides operations
+    such as inserting, updating, deleting and retrieving data.
+  </p>
+
+  <h3>Examples of DBMS</h3>
+
+  <ul>
+    <li>MySQL</li>
+    <li>Oracle Database</li>
+    <li>PostgreSQL</li>
+    <li>Microsoft SQL Server</li>
+    <li>SQLite</li>
+  </ul>
+
+  <pre><code>User / Application
+        ↓
+      DBMS
+        ↓
+    Database</code></pre>
+</section>
+
+
+<section id="advantages" class="card">
+  <h2>4. Advantages of DBMS</h2>
+
+  <ul>
+    <li>
+      <strong>Data Organization:</strong>
+      Stores data in a structured and organized manner.
+    </li>
+
+    <li>
+      <strong>Data Security:</strong>
+      Helps control who can access or modify data.
+    </li>
+
+    <li>
+      <strong>Data Consistency:</strong>
+      Helps maintain accurate and consistent data.
+    </li>
+
+    <li>
+      <strong>Data Sharing:</strong>
+      Multiple authorized users can access the database.
+    </li>
+
+    <li>
+      <strong>Backup and Recovery:</strong>
+      Provides mechanisms for recovering data after failures.
+    </li>
+
+    <li>
+      <strong>Reduced Data Redundancy:</strong>
+      Good database design can reduce unnecessary duplicate data.
+    </li>
+  </ul>
+</section>
+
+
+<section id="models" class="card">
+  <h2>5. Data Models</h2>
+
+  <p>
+    A data model describes how data is organized and how different
+    pieces of data are related.
+  </p>
+
+  <h3>1. Hierarchical Model</h3>
+
+  <p>
+    Data is organized in a tree-like structure using parent-child
+    relationships.
+  </p>
+
+  <pre><code>College
+   |
+   +-- CSE
+   |    |
+   |    +-- Student
+   |
+   +-- ECE
+        |
+        +-- Student</code></pre>
+
+  <h3>2. Network Model</h3>
+
+  <p>
+    Data can have multiple relationships and can be represented as
+    a network of connected records.
+  </p>
+
+  <h3>3. Relational Model</h3>
+
+  <p>
+    Data is stored in tables consisting of rows and columns.
+    This is one of the most widely used database models.
+  </p>
+
+  <h3>4. Object-Oriented Model</h3>
+
+  <p>
+    Data is represented using objects and classes, similar to
+    object-oriented programming concepts.
+  </p>
+</section>
+
+
+<section id="tables" class="card">
+  <h2>6. Tables, Rows and Columns</h2>
+
+  <p>
+    In a relational database, data is commonly stored in tables.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Table:</strong> Collection of related data.
+    </li>
+
+    <li>
+      <strong>Row:</strong> Represents one record.
+    </li>
+
+    <li>
+      <strong>Column:</strong> Represents an attribute or field.
+    </li>
+  </ul>
+
+  <h3>Example</h3>
+
+  <table>
+    <tr>
+      <th>SID</th>
+      <th>SName</th>
+      <th>Dept</th>
+    </tr>
+
+    <tr>
+      <td>101</td>
+      <td>Arun</td>
+      <td>CSE</td>
+    </tr>
+
+    <tr>
+      <td>102</td>
+      <td>Priya</td>
+      <td>ECE</td>
+    </tr>
+
+    <tr>
+      <td>103</td>
+      <td>Ravi</td>
+      <td>CSE</td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    <strong>Remember:</strong>
+    A row represents a record, while a column represents an attribute.
+  </div>
+</section>
+
+
+<section id="keys" class="card">
+  <h2>7. Keys in DBMS</h2>
+
+  <p>
+    Keys are attributes or combinations of attributes used to identify
+    records and establish relationships between tables.
+  </p>
+
+  <h3>Primary Key</h3>
+
+  <p>
+    A primary key uniquely identifies each record in a table.
+    It cannot contain duplicate values.
+  </p>
+
+  <pre><code>CREATE TABLE Student (
+    SID INT PRIMARY KEY,
+    SName VARCHAR(50),
+    Dept VARCHAR(30)
+);</code></pre>
+
+  <h3>Foreign Key</h3>
+
+  <p>
+    A foreign key is an attribute that refers to a key in another table.
+    It is used to establish relationships between tables.
+  </p>
+
+  <pre><code>CREATE TABLE Enrollment (
+    SID INT,
+    CID INT,
+    Marks INT,
+    FOREIGN KEY (SID) REFERENCES Student(SID)
+);</code></pre>
+
+  <h3>Candidate Key</h3>
+
+  <p>
+    A candidate key is an attribute or set of attributes that can
+    uniquely identify a record. One candidate key can be selected
+    as the primary key.
+  </p>
+
+  <h3>Composite Key</h3>
+
+  <p>
+    A composite key consists of two or more attributes together used
+    to uniquely identify a record.
+  </p>
+
+  <pre><code>PRIMARY KEY (SID, CID)</code></pre>
+
+  <h3>Super Key</h3>
+
+  <p>
+    A super key is any set of one or more attributes that can uniquely
+    identify a record.
+  </p>
+</section>
+      <section id="sql" class="card">
+  <h2>8. SQL (Structured Query Language)</h2>
+
+  <p>
+    SQL stands for <strong>Structured Query Language</strong>.
+    It is used to create, access, modify and manage data in relational
+    databases.
+  </p>
+
+  <h3>Major Categories of SQL Commands</h3>
+
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Purpose</th>
+      <th>Examples</th>
+    </tr>
+
+    <tr>
+      <td>DDL</td>
+      <td>Defines database structure</td>
+      <td>CREATE, ALTER, DROP</td>
+    </tr>
+
+    <tr>
+      <td>DML</td>
+      <td>Modifies data</td>
+      <td>INSERT, UPDATE, DELETE</td>
+    </tr>
+
+    <tr>
+      <td>DQL</td>
+      <td>Retrieves data</td>
+      <td>SELECT</td>
+    </tr>
+
+    <tr>
+      <td>DCL</td>
+      <td>Controls permissions</td>
+      <td>GRANT, REVOKE</td>
+    </tr>
+
+    <tr>
+      <td>TCL</td>
+      <td>Manages transactions</td>
+      <td>COMMIT, ROLLBACK</td>
+    </tr>
+  </table>
+</section>
+
+
+<section id="crud" class="card">
+  <h2>9. CRUD Operations</h2>
+
+  <p>
+    CRUD represents the four basic operations performed on stored data:
+    <strong>Create, Read, Update and Delete</strong>.
+  </p>
+
+  <h3>1. Create — INSERT</h3>
+
+  <p>
+    The INSERT command is used to add a new record to a table.
+  </p>
+
+  <pre><code>INSERT INTO Student
+(SID, SName, Dept)
+VALUES
+(101, 'Arun', 'CSE');</code></pre>
+
+
+  <h3>2. Read — SELECT</h3>
+
+  <p>
+    The SELECT command is used to retrieve data from a table.
+  </p>
+
+  <pre><code>SELECT * FROM Student;</code></pre>
+
+  <p>To retrieve selected columns:</p>
+
+  <pre><code>SELECT SName, Dept
+FROM Student;</code></pre>
+
+  <p>To retrieve students from the CSE department:</p>
+
+  <pre><code>SELECT *
+FROM Student
+WHERE Dept = 'CSE';</code></pre>
+
+
+  <h3>3. Update — UPDATE</h3>
+
+  <p>
+    The UPDATE command is used to modify existing records.
+  </p>
+
+  <pre><code>UPDATE Student
+SET Dept = 'AI & ML'
+WHERE SID = 101;</code></pre>
+
+  <div class="highlight">
+    <strong>Important:</strong>
+    Always use a suitable WHERE condition when updating specific records.
+  </div>
+
+
+  <h3>4. Delete — DELETE</h3>
+
+  <p>
+    The DELETE command is used to remove records from a table.
+  </p>
+
+  <pre><code>DELETE FROM Student
+WHERE SID = 101;</code></pre>
+
+  <div class="highlight">
+    <strong>Important:</strong>
+    Without a WHERE condition, DELETE can remove all records from the table.
+  </div>
+</section>
+
+
+<section class="card">
+  <h2>Useful SQL Examples</h2>
+
+  <h3>Create a Table</h3>
+
+  <pre><code>CREATE TABLE Student (
+    SID INT PRIMARY KEY,
+    SName VARCHAR(50),
+    Dept VARCHAR(30),
+    Marks INT
+);</code></pre>
+
+  <h3>Display Students with Marks Greater Than 80</h3>
+
+  <pre><code>SELECT *
+FROM Student
+WHERE Marks > 80;</code></pre>
+
+  <h3>Sort Students by Marks</h3>
+
+  <pre><code>SELECT *
+FROM Student
+ORDER BY Marks DESC;</code></pre>
+
+  <h3>Count Students</h3>
+
+  <pre><code>SELECT COUNT(*)
+FROM Student;</code></pre>
+
+  <h3>Find Average Marks</h3>
+
+  <pre><code>SELECT AVG(Marks)
+FROM Student;</code></pre>
+</section>
+  <section id="relationships" class="card">
+  <h2>10. Relationships in DBMS</h2>
+
+  <p>
+    A relationship describes how records in one table are connected
+    with records in another table.
+  </p>
+
+  <h3>Types of Relationships</h3>
+
+  <ul>
+    <li>
+      <strong>One-to-One (1:1):</strong>
+      One record in one table is related to one record in another table.
+    </li>
+
+    <li>
+      <strong>One-to-Many (1:N):</strong>
+      One record can be related to many records.
+    </li>
+
+    <li>
+      <strong>Many-to-Many (M:N):</strong>
+      Many records can be related to many records.
+    </li>
+  </ul>
+
+  <h3>Example: Student and Course</h3>
+
+  <pre><code>Student
+   |
+   |  enrolls
+   ↓
+Course
+
+One student → Many courses
+One course  → Many students
+
+Therefore:
+Student ↔ Course = Many-to-Many</code></pre>
+
+  <p>
+    A separate Enrollment table can be used to represent a
+    many-to-many relationship.
+  </p>
+
+  <pre><code>Enrollment
+----------------
+SID
+CID
+Marks</code></pre>
+</section>
+
+
+<section id="normalization" class="card">
+  <h2>11. Normalization</h2>
+
+  <p>
+    Normalization is the process of organizing data in a database
+    to reduce unnecessary duplication and improve data consistency.
+  </p>
+
+  <h3>Why Normalization is Used</h3>
+
+  <ul>
+    <li>Reduces data redundancy.</li>
+    <li>Improves data consistency.</li>
+    <li>Reduces update problems.</li>
+    <li>Reduces insertion problems.</li>
+    <li>Reduces deletion problems.</li>
+  </ul>
+
+  <h3>First Normal Form (1NF)</h3>
+
+  <p>
+    A table is in 1NF when each field contains a single atomic value
+    and there are no repeating groups.
+  </p>
+
+  <h3>Second Normal Form (2NF)</h3>
+
+  <p>
+    A table is in 2NF when it is in 1NF and every non-key attribute
+    is fully dependent on the whole primary key.
+  </p>
+
+  <h3>Third Normal Form (3NF)</h3>
+
+  <p>
+    A table is in 3NF when it is in 2NF and non-key attributes do not
+    depend on other non-key attributes.
+  </p>
+
+  <div class="highlight">
+    <strong>Simple idea:</strong>
+    Normalization organizes data into appropriate tables so that
+    unnecessary duplication is reduced.
+  </div>
+</section>
+
+
+<section id="transactions" class="card">
+  <h2>12. Database Transactions</h2>
+
+  <p>
+    A transaction is a sequence of database operations that is treated
+    as a single logical unit of work.
+  </p>
+
+  <p>
+    For example, transferring money between two bank accounts involves
+    more than one database operation. The operations should be completed
+    correctly as one transaction.
+  </p>
+
+  <h3>Common Transaction Commands</h3>
+
+  <ul>
+    <li>
+      <strong>COMMIT:</strong>
+      Permanently saves the changes made by a transaction.
+    </li>
+
+    <li>
+      <strong>ROLLBACK:</strong>
+      Cancels changes made since the appropriate transaction point.
+    </li>
+
+    <li>
+      <strong>SAVEPOINT:</strong>
+      Creates a point to which a transaction can later be rolled back.
+    </li>
+  </ul>
+
+  <pre><code>START TRANSACTION;
+
+UPDATE Account
+SET Balance = Balance - 1000
+WHERE AccountID = 101;
+
+UPDATE Account
+SET Balance = Balance + 1000
+WHERE AccountID = 102;
+
+COMMIT;</code></pre>
+</section>
+
+
+<section id="acid" class="card">
+  <h2>13. ACID Properties</h2>
+
+  <p>
+    ACID properties help ensure reliable database transactions.
+  </p>
+
+  <table>
+    <tr>
+      <th>Property</th>
+      <th>Meaning</th>
+    </tr>
+
+    <tr>
+      <td>Atomicity</td>
+      <td>
+        A transaction is treated as one unit. It is completed fully
+        or its changes are not applied.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Consistency</td>
+      <td>
+        A transaction should maintain the database according to
+        its defined rules and constraints.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Isolation</td>
+      <td>
+        Concurrent transactions should not improperly interfere
+        with each other.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Durability</td>
+      <td>
+        Once a transaction is successfully committed, its changes
+        should persist despite subsequent failures.
+      </td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    <strong>Easy way to remember:</strong>
+    A — Atomicity<br>
+    C — Consistency<br>
+    I — Isolation<br>
+    D — Durability
+  </div>
+</section>
+
+
+<section id="faq" class="card">
+  <h2>14. Frequently Asked Questions</h2>
+
+  <details>
+    <summary>What is DBMS?</summary>
+    <p>
+      DBMS is software used to create, store, organize, retrieve
+      and manage data in a database.
+    </p>
+  </details>
+
+  <details>
+    <summary>What is a primary key?</summary>
+    <p>
+      A primary key uniquely identifies each record in a table.
+    </p>
+  </details>
+
+  <details>
+    <summary>What is a foreign key?</summary>
+    <p>
+      A foreign key is used to establish a relationship between
+      tables by referring to a key in another table.
+    </p>
+  </details>
+
+  <details>
+    <summary>What is SQL?</summary>
+    <p>
+      SQL stands for Structured Query Language and is used to
+      interact with relational databases.
+    </p>
+  </details>
+
+  <details>
+    <summary>What is normalization?</summary>
+    <p>
+      Normalization is the process of organizing database tables
+      to reduce unnecessary data duplication and improve consistency.
+    </p>
+  </details>
+
+  <details>
+    <summary>What are ACID properties?</summary>
+    <p>
+      ACID stands for Atomicity, Consistency, Isolation and Durability.
+      These properties help make database transactions reliable.
+    </p>
+  </details>
+</section>
+
+
+<section class="card">
+  <h2>Learn DBMS Step by Step</h2>
+
+  <p>
+    Start with databases and tables, then learn keys, SQL commands,
+    relationships, normalization and transactions. Practice SQL
+    queries regularly to strengthen your database skills.
+  </p>
+
+  <p>
+    Continue exploring the free educational resources available on
+    Learnix for programming, technology and career preparation.
+  </p>
+
+  <a href="index.html" class="highlight">
+    ← Back to Learnix Home
+  </a>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 Learnix. Learn. Practice. Succeed.</p>
+
+  <p>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms</a>
+  </p>
+</footer>
+
+</body>
+</html>
+  
